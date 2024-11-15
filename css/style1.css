@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: rgb(37, 37, 37);
+}
+
+#haut{
+    position: fixed;
+    width: 98%;
+    z-index: 1;
+    text-align: center;
+    background: linear-gradient(135deg, #005188, #00a591);
+    color: white;
+    padding: 1%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#hautt{
+    text-align: center;
+    background: linear-gradient(135deg, #005188, #00a591);
+    color: white;
+    padding: 2%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+h1{
+    font-size: 60px;
+}
+
+p{
+    font-size: 15px;
+}
+
+h2{
+    color: orangered;
+    font-size: 35px;
+}
+
+/* Main Navigation (Tabs) */
+#nav {
+    display: flex;
+    justify-content: center;
+    background-color: #1a1a1a;
+    padding: 10px;
+}
+
+#nav a {
+    color: #fff;
+    background-color: #1a1a1a;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#nav a:hover {
+    background: linear-gradient(135deg, #006e89, #d24d00);
+    transform: scale(1.1);
+}
+
+#box{
+    margin: 15px;
+    background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
+    border-radius: 30px;
+    padding: 20px;
+}
+
+#player{
+    margin: 15px;
+    background: linear-gradient(135deg, #ff5c00, #d24d00);
+    border-radius: 15px;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+section{
+    padding: 20px;
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+section.active {
+    display: block;
+}
+
+#classement-list{
+    font-size: 25px;
+    margin: 15px;
+    background: linear-gradient(135deg, #ff5c00, #ff7d31);
+    border-radius: 15px;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease 
+    
+}
+
+#classement-list:hover{
+    padding: 160px;
+    border-radius: 30px;
+}
+
+
+.partieoverflow{
+    height: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    transition: all 0.3s ease;    
+}
+
+.partieoverflow:hover.item{
+    flex-grow: 2;
+}
+
+
+#item-one {
+    position: absolute;
+    padding: 15px;
+    left: 0;
+    width: 100%;
+}
+
