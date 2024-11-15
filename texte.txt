@@ -16,3 +16,5 @@ PAGE D'ACCEUIL :
 - menu latéral quand fenêtre trop petite
 - rendre bouton joueur clickable
 - horloge
+
+-bouton tournoi en cours + pari au milieu
