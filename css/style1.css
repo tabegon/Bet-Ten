@@ -35,7 +35,7 @@ h2{
 #nav {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
     margin-top: -100px;
     display: flex;
     justify-content: center;
@@ -89,7 +89,9 @@ section{
 section.active {
     display: block;
 }
-#classement-list{
+
+
+.partieoverflow{
     font-size: 25px;
     margin: 15px;
     background: linear-gradient(135deg, #c75a06, #cb7b45);
@@ -97,14 +99,7 @@ section.active {
     padding: 20px;
     color: black;
     font-weight: bold;
-    transition: all 0.3s ease 
-    
-}
-#classement-list:hover{
-    padding: 160px;
-    border-radius: 30px;
-}
-.partieoverflow{
+    /*-------------------------------------------------------------*/
     height: 25px;
     overflow: hidden;
     display: flex;
@@ -115,14 +110,17 @@ section.active {
     position: relative;
     transition: all 0.3s ease;    
 }
-.partieoverflow:hover.item{
-    flex-grow: 2;
-}
+
 #item-one {
     position: absolute;
     padding: 15px;
     left: 0;
     width: 100%;
+}
+
+.item{
+    display: flex;
+    flex-direction: row;    
 }
 
 .quiz-container{
