@@ -135,17 +135,40 @@ section.active {
 }
 
 .quiz-question{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     border-radius: 10px;
     padding: 20px;
     background-color: #13c1ac;
 }
 
+#pquiz{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 input{
     color: black;
+    text-align: center;
+    border-radius: 10px;
+    height: 20px;
 }
 
 button{
-    color: black;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px 22px;
+    border-radius: 6px;
+    background: #7d2ae8;
+    transition: all 0.2s;
+}
+
+button:active{
+    transform: scale(0.96);
 }
 
 /* Animations */
