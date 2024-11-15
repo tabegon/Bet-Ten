@@ -1,20 +1,11 @@
-Page d'accueil
-Première connexion
-    Formulaire d'identification
-100 pts d'identification
-BET-TEN
-
-
-PAGE D'ACCEUIL :
-    BIENVENUE SUR BETTEN
-    Aperçu des 5 premiers joueurs
-    
-- Paris
-- Information
-
 - Login -> membre, invité, admin
 - menu latéral quand fenêtre trop petite
 - rendre bouton joueur clickable
 - horloge
+- boite clickable
+- bouton tournoi en cours + pari au milieu
+- Styles à ajouter
 
--bouton tournoi en cours + pari au milieu
+IMPORTANT:
+-SYSTEME DE POINTS
+-SYSTEME DE PARIS
