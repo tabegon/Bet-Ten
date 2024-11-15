@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>BET-TEN</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/style1.css">
+    </head>
+    <body>
+        <div id="accueil" class="haut">
+            <h1>BET-TEN</h1>
+        </div>
+        
+
+        <div id="nav">
+            <a href="main.html">Accueil</a>
+            <a href="classement.html">Classement</a>
+            <a href="quizz.html">Quiz</a>
+            <a href="Paris.html">Paris</a>
+			<a href="Information.html">Informations</a>
+        </div>
+        
+		
+        <div class="main">                    
+
+			<div class="main">
+            <div id="box">
+               <h2>Parier sur les matchs a venir</h2>
+            </div>
+            
+            <div class="Paris">
+                
+            <!-- Liste des joueurs (à générer dynamiquement en JS) -->
+				<div class="clique">
+				<a href="classement.html">Tournoi en cours</a>
+				</div>
+                <div class="clique">
+				<a href="classement.html">Vos paris</a>
+				</div>
+			
+			</div>
+        </div>
+    </body>
+</html>
