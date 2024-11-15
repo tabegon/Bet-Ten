@@ -75,6 +75,11 @@ h3{
     background: linear-gradient(135deg, #006e89, #A0522D);
     transform: scale(1.1);
 }
+
+.active{
+    border: 2px solid rgb(42, 40, 40);
+}
+
 .main{
     margin-top: 200px;
 }
