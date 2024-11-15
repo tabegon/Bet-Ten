@@ -27,7 +27,7 @@ p{
     font-size: 15px;
 }
 h2{
-    color: #c75a06;
+    color: #A0522D;
     font-size: 35px;
 }
 /* Main Navigation (Tabs) */
@@ -50,10 +50,10 @@ h2{
     margin: 0 10px;
     border-radius: 20px;
     font-weight: 600;
-    transition: all 3s;
+    transition: all 1s;
 }
 #nav a:hover {
-    background: linear-gradient(135deg, #006e89, #c75a06);
+    background: linear-gradient(135deg, #006e89, #A0522D);
     transform: scale(1.1);
 }
 .main{
@@ -68,7 +68,7 @@ h2{
 }
 #player{
     margin: 15px;
-    background: linear-gradient(135deg, #c75a06, #cb7b45);
+    background: linear-gradient(135deg, #A0522D, #cb7b45);
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -94,7 +94,7 @@ section.active {
 .partieoverflow{
     font-size: 25px;
     margin: 15px;
-    background: linear-gradient(135deg, #c75a06, #cb7b45);
+    background: linear-gradient(135deg, #A0522D, #cb7b45);
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -126,9 +126,8 @@ section.active {
 .quiz-container{
     margin: 15px;
     border-radius: 10px;
-
+	background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
     padding: 30px;
-    background-color: #242c2b;
     color: black;
 }
 
@@ -140,11 +139,11 @@ section.active {
     gap: 10px;
     border-radius: 10px;
     padding: 20px;
-    background-color: #13c1ac;
+    background-color: #1c869d;
 }
 
 #pquiz{
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: bold;
 }
@@ -157,11 +156,11 @@ input{
 }
 
 button{
-    color: #fff;
-    border: 2px solid #fff;
+    color: noir;
+    border: 2px solid #1c869d;
     padding: 8px 22px;
     border-radius: 6px;
-    background: #7d2ae8;
+    background: #2da0ba;
     transition: all 0.2s;
 }
 
