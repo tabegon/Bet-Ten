@@ -4,12 +4,11 @@
     color: white;
     font-family: 'Poppins', sans-serif;
 }
-
 body{
     background-color: rgb(37, 37, 37);
 }
-
 #haut{
+    margin-top: -200px;
     position: fixed;
     width: 98%;
     z-index: 1;
@@ -21,37 +20,28 @@ body{
     border-bottom-right-radius: 10px;
 }
 
-#hautt{
-    text-align: center;
-    background: linear-gradient(135deg, #005188, #00a591);
-    color: white;
-    padding: 2%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
 h1{
     font-size: 60px;
 }
-
 p{
     font-size: 15px;
-    color: #1a1919;
 }
-
 h2{
-    color: orangered;
+    color: #c75a06;
     font-size: 35px;
 }
-
 /* Main Navigation (Tabs) */
+
 #nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin-top: -100px;
     display: flex;
     justify-content: center;
     background-color: #1a1a1a;
     padding: 10px;
 }
-
 #nav a {
     color: #fff;
     background-color: #1a1a1a;
@@ -60,12 +50,14 @@ h2{
     margin: 0 10px;
     border-radius: 20px;
     font-weight: 600;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: all 3s;
 }
-
 #nav a:hover {
-    background: linear-gradient(135deg, #006e89, #d24d00);
+    background: linear-gradient(135deg, #006e89, #c75a06);
     transform: scale(1.1);
+}
+.main{
+    margin-top: 200px;
 }
 
 #box{
@@ -74,21 +66,18 @@ h2{
     border-radius: 30px;
     padding: 20px;
 }
-
 #player{
     margin: 15px;
-    background: linear-gradient(135deg, #ff5c00, #d24d00);
+    background: linear-gradient(135deg, #c75a06, #cb7b45);
     border-radius: 15px;
     padding: 20px;
     color: black;
     font-weight: bold;
     text-align: center;
 }
-
 a{
     text-decoration: none;
 }
-
 section{
     padding: 20px;
     display: none;
@@ -97,30 +86,24 @@ section{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     margin-top: 20px;
 }
-
 section.active {
     display: block;
 }
-
 #classement-list{
     font-size: 25px;
     margin: 15px;
-    background: linear-gradient(135deg, #ff5c00, #ff7d31);
+    background: linear-gradient(135deg, #c75a06, #cb7b45);
     border-radius: 15px;
     padding: 20px;
     color: black;
     font-weight: bold;
-    transition: all 0.3s; 
+    transition: all 0.3s ease 
     
 }
-
 #classement-list:hover{
-    border-radius: 15px;
-    overflow: visible;
-    margin-bottom: 80px;
+    padding: 160px;
+    border-radius: 30px;
 }
-
-
 .partieoverflow{
     height: 25px;
     overflow: hidden;
@@ -132,33 +115,14 @@ section.active {
     position: relative;
     transition: all 0.3s ease;    
 }
-
 .partieoverflow:hover.item{
-    margin-top: -50px;
+    flex-grow: 2;
 }
-
-
 #item-one {
-    display: flex;
     position: absolute;
-    background: linear-gradient(135deg, #ff5c00, #ff7d31);
-    margin-top: 32px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     left: 0;
-    width: 97.35%;
-}
-
-
-@keyframes Slide{
-    from{
-        margin-top: 0px;
-    }
-
-    to{
-        margin-top: 32px;
-    }
+    width: 100%;
 }
 
 .quiz-container{
