@@ -9,3 +9,8 @@ PAGE D'ACCEUIL :
     BIENVENUE SUR BETTEN
     Aperçu des 5 premiers joueurs
     
+- Paris
+- Information
+
+- Header -> Changer couleur en fonction de la catégorie
+- Login -> membre, invité, admin
