@@ -12,5 +12,7 @@ PAGE D'ACCEUIL :
 - Paris
 - Information
 
-- Header -> Changer couleur en fonction de la catégorie
 - Login -> membre, invité, admin
+- menu latéral quand fenêtre trop petite
+- rendre bouton joueur clickable
+- horloge

@@ -7,17 +7,28 @@
 body{
     background-color: rgb(37, 37, 37);
 }
-#haut{
+.haut{
     margin-top: -200px;
     position: fixed;
     width: 98%;
     z-index: 1;
     text-align: center;
-    background: linear-gradient(135deg, #005188, #00a591);
     color: white;
     padding: 1%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+#accueil{
+    background: linear-gradient(135deg, #A0522D, #cb7b45);
+}
+
+#classement{
+    background: linear-gradient(135deg, #A0522D, #cb7b45);
+}
+
+#quiz{
+    background: linear-gradient(135deg, #005188, #00a591);
 }
 
 h1{
@@ -129,7 +140,7 @@ a{
     gap: 10px;
     border-radius: 10px;
     padding: 20px;
-    background-color: #1c869d;
+    background: linear-gradient(135deg, #005188, #00a591);
 }
 
 #pquiz{
@@ -146,7 +157,7 @@ input{
 }
 
 button{
-    color: noir;
+    color: black;
     border: 2px solid #1c869d;
     padding: 8px 22px;
     border-radius: 6px;
