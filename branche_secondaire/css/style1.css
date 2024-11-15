@@ -120,7 +120,17 @@ h2 {
     font-size: 16px;
 }
 
+.item-left{
+    text-align: left;
+}
 
+.item-center{
+    text-align: center;
+}
+
+.item-right{
+    text-align: right;
+}
 
 .item:hover {
     background-color: #006e89; /* Change la couleur de fond de l'élément au survol */

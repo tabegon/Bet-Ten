@@ -114,8 +114,10 @@ section.active {
 }
 
 #classement-list:hover{
-    padding: 160px;
-    border-radius: 30px;
+    border-radius: 15px;
+    overflow: visible;
+    margin-bottom: 100px;
+
 }
 
 
@@ -132,14 +134,20 @@ section.active {
 }
 
 .partieoverflow:hover.item{
-    flex-grow: 2;
+    margin-top: -50px;
 }
 
 
 #item-one {
+    display: flex;
     position: absolute;
-    padding: 15px;
+    background: linear-gradient(135deg, #ff5c00, #ff7d31);
+    margin-top: 32px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px;
     left: 0;
-    width: 100%;
+    width: 97.35%;
+
 }
 
