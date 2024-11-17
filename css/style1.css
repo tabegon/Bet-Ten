@@ -113,8 +113,18 @@ a{
     text-decoration: none;
 }
 
+.link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    text-decoration: none; /* Enlever le soulignement */
+}
 
 .classement{
+    cursor: pointer;
     font-size: 25px;
     margin: 15px;
     background: linear-gradient(135deg, #A0522D, #cb7b45);
@@ -130,7 +140,6 @@ a{
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
-    position: relative;
     transition: all 0.3s ease;    
 }
 
@@ -162,12 +171,7 @@ a{
 	text-align: center;
 }
 
-#item-one {
-    position: absolute;
-    padding: 15px;
-    left: 0;
-    width: 100%;
-}
+
 
 .item{
     display: flex;
