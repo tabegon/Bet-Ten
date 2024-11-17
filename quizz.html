@@ -4,10 +4,13 @@
         <title>BET-TEN</title>
         <link rel="icon" href="images/logo.png">
         <link rel="stylesheet" href="css/style1.css">
+        <script src="js/code.js"></script>
     </head>
     <body>
         <div id="quiz" class="haut">
+            <div id="clock"></div>
             <h1>BET-TEN</h1>
+            <br>
         </div>
         
 
@@ -33,27 +36,5 @@
             <div id="animation" class="win-lose-animation"></div>
 
         </div>
-        <!--Tests de scripts-->
-        <script>
-            // Fonction pour afficher une animation après un pari
-            function showAnimation(result) {
-                const anim = document.getElementById('animation');
-                anim.style.display = 'block';
-                anim.innerText = result ? "Gagné !" : "Perdu !";
-                setTimeout(() => anim.style.display = 'none', 2000);
-            }
-
-            // Fonction de vérification des réponses au quiz
-            function checkAnswer(button, correctAnswer) {
-                const input = button.previousElementSibling.value;
-                const questionDiv = button.parentElement;
-                if (input.toLowerCase() === correctAnswer.toLowerCase()) {
-                    showAnimation(true);
-                } else {
-                    showAnimation(false);
-                }
-                questionDiv.style.display = "none"; // Remplacer la question
-            }
-        </script>
     </body>
 </html>

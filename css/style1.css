@@ -8,6 +8,10 @@ body{
     background-color: rgb(37, 37, 37);
 }
 .haut{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin-top: -200px;
     position: fixed;
     width: 98%;
@@ -17,6 +21,11 @@ body{
     padding: 1%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+#clock {
+    font-size: 1.3rem;
+    color: #fff;
 }
 
 #accueil{
