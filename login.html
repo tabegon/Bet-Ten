@@ -4,27 +4,28 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/style-login.css">
         <title>LOGIN PAGE</title>
+        <script src="js/login.js"></script>
     </head>
     <body>
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form action="">
+                    <form id="loginForm" action="">
                         <h2>Login</h2>
                         <div class="inputbox">
-                            <input type="email" required>
-                            <label for="Email">Email</label>
+                            <input id="username" type="text" required>
+                            <label for="username">Surnom</label>
                         </div>
                         <div class="inputbox">
-                            <input type="password" required>
-                            <label for="Mot-de-passe">Mot-de-passe</label>
+                            <input id="password" type="password" required>
+                            <label for="password">Mot-de-passe</label>
                         </div>
                         <div class="forget">
                             <label for="">
                                 <a href="#">Mot de passe oublié?</a>
                             </label>
                         </div>
-                        <button onclick="window.location.href='main.html';">CONNECTER</button>
+                        <button onclick=enter() type="submit">CONNECTER</button>
                         <div class="register">
                             <p>Pas de compte? <a href="#">S'Inscrire</a></p>
 

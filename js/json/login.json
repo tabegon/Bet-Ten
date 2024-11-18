@@ -1,0 +1,13 @@
+{
+    "utilisateurs" : [
+        {"mail" : "theo.abegon@gmail.com",
+        "role" : "membre",
+        "motdepasse" : "cestunsecret",
+        "user_id" :  1},
+
+        {"mail" : "guillaume.bajolet@gmail.com",
+        "role" : "membre",
+        "motdepasse" : "chutfautpasledire",
+        "user_id" :  1}
+    ]
+}
