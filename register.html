@@ -11,26 +11,18 @@
             <div class="form-box">
                 <div class="form-value">
                     <form id="loginForm" action="">
-                        <h2>Login</h2>
+                        <h2>Register</h2>
                         <div class="inputbox">
-                            <input id="name" type="text" required>
+                            <input id="username" type="text" required>
                             <label for="username">Surnom</label>
                         </div>
                         <div class="inputbox">
-                            <input id="mdp" type="password" required>
+                            <input id="password" type="password" required>
                             <label for="password">Mot-de-passe</label>
                         </div>
-                        <div class="forget">
-                            <label for="">
-                                <a href="passwordinexistant.html">Mot de passe oublié?</a>
-                            </label>
-                        </div>
-                        <button onclick=enter() type="submit">CONNECTER</button>
+                        <button onclick=to_login() type="submit">S'INSCRIRE</button>
                         <div class="register">
-                            <p>Pas de compte? <a href="register.html">S'Inscrire</a></p>
-
-                        </div>
-
+                            <p>Déjà un compte? <a href="login.html">Se connecter</a></p>
                     </form>
                 </div>
             </div>
