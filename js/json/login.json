@@ -1,13 +1,15 @@
 {
     "utilisateurs" : [
-        {"mail" : "theo.abegon@gmail.com",
+        {"nom" : "theo",
         "role" : "membre",
         "motdepasse" : "cestunsecret",
+        "points" : 100,
         "user_id" :  1},
 
-        {"mail" : "guillaume.bajolet@gmail.com",
+        {"nom" : "guillaume",
         "role" : "membre",
         "motdepasse" : "chutfautpasledire",
+        "points" : 100,
         "user_id" :  1}
     ]
 }
