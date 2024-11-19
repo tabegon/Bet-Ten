@@ -21,7 +21,7 @@ function checkAnswer(button, correctAnswer) {
     questionDiv.style.display = "none"; // Remplacer la question
 }
 
-const users = {nom: "Th30", password: 'tkt', points: 100 };
+const users = {nom: "Th30", password: 'tkt', points: 10 };
 
 function enter(){
     const usernameInput = document.getElementById('username');
@@ -30,14 +30,4 @@ function enter(){
     if (usernameInput.value == users.nom &&
         passwordInput.value == users.password) {
             document.location.href='main.html'}
-    /* if (usernameInput.value.trim() != '' &&
-        passwordInput.value.trim() != '') {
-            document.location.href='main.html'} */
 }
-
-// Mettre à jour les points de l'utilisateur
-function updatePoints() {
-    document.getElementById('username').innerText = `Points: ${users.nom}`;
-    document.getElementById('user-points').innerText = `Points: ${users.points}`;
-}
-updatePoints();
