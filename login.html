@@ -10,14 +10,14 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form id="loginForm" action="">
+                    <form name="formulaire" id="loginForm" action="" method="post" onsubmit="return enter()">
                         <h2>Login</h2>
                         <div class="inputbox">
-                            <input id="name" type="text" required>
+                            <input name="name" type="text" required>
                             <label for="username">Surnom</label>
                         </div>
                         <div class="inputbox">
-                            <input id="mdp" type="password" required>
+                            <input name="mdp" type="password" required>
                             <label for="password">Mot-de-passe</label>
                         </div>
                         <div class="forget">
@@ -25,7 +25,7 @@
                                 <a href="passwordinexistant.html">Mot de passe oublié?</a>
                             </label>
                         </div>
-                        <button onclick=enter() type="submit">CONNECTER</button>
+                        <input class="valider" type="submit" value="CONNECTER">
                         <div class="register">
                             <p>Pas de compte? <a href="register.html">S'Inscrire</a></p>
 

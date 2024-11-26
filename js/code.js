@@ -7,7 +7,7 @@ function showAnimation(result, correctAnswer) {
     anim.style.display = 'block';
     anim.innerHTML = result ? "Gagné !" : "Perdu !";
     if (anim.innerHTML == "Perdu !"){
-        anim.innerHTML = "Perdu ! " + '<br>' +  "la réponse était " + correctAnswer 
+        anim.innerHTML = "Perdu ! <br> la réponse était " + correctAnswer 
     }
     setTimeout(() => anim.style.display = 'none', 2000);
     
@@ -25,21 +25,19 @@ function checkAnswer(button, correctAnswer) {
     questionDiv.style.display = "none"; // Remplacer la question
 };
 
-const users = {nom: "Th30", password: 'tkt', points: 10 };
+const users = {nom: "Th30", password: 'tkt', points: 10 }
 
 function enter(){
-    console.log('test')
-    var usernameInput = document.getElementById('name');
-    var passwordInput = document.getElementById('mdp');
+    var passwordInput = document.forms['formulaire']['mdp'].value;
+    var usernameInput = document.forms['formulaire']['name'].value;
+    if (usernameInput == users.nom &&
+        passwordInput == users.password) {
+            open('main.html')};
+}
 
-    if (typeof usernameInput !== "undefined" &&
-        typeof passwordInput !== "undefined") {
-        if (usernameInput.value == users.nom &&
-            passwordInput.value == users.password) {
-                document.location.href='main.html'}
-}
-}
 
 function to_login(){
-    document.location.href='login.html'
+    if (usernameInput.value !== "" &&
+        passwordInput.value !== "") {
+            document.location.href='login.html'}
 }
