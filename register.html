@@ -10,7 +10,7 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form id="loginForm" action="">
+                    <form id="loginForm" action="" method="post" onsubmit="to_login()">
                         <h2>Register</h2>
                         <div class="inputbox">
                             <input id="username" type="text" required>
@@ -20,7 +20,7 @@
                             <input id="password" type="password" required>
                             <label for="password">Mot-de-passe</label>
                         </div>
-                        <button onclick=to_login() type="submit">S'INSCRIRE</button>
+                        <input class="valider" type="submit" value="S'INSCRIRE">
                         <div class="register">
                             <p>Déjà un compte? <a href="login.html">Se connecter</a></p>
                     </form>
