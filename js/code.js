@@ -25,20 +25,18 @@ function checkAnswer(button, correctAnswer) {
     questionDiv.style.display = "none"; // Supprime la question
 };
 
-const users = {nom: "Th30", password: 'tkt', points: 10 }       // Tous les utilisateurs avec leurs mdp et leurs nb de points
-var passwordInput = document.forms['formulaire']['mdp'].value;  // Récupère la valeur de l'input mdp
-var usernameInput = document.forms['formulaire']['name'].value; // Récupère la valeur de l'input name
+const users = {nom: "Th30", password: 'tkt', points: 10 };      // Tous les utilisateurs avec leurs mdp et leurs nb de points
 
 // Fonction d'entrée dans le site
-function enter(){
-        if (usernameInput === users.nom &&      // Si la valeur de nom est = au nom de users et
-            passwordInput === users.password) {     // la valeur de mdp est = au mdp de users
-                open('main.html');              // Ouvre la page web voulue
-                close('login.html')};           // Fermer la page actuelle
-}
+function enter(passwordInput, usernameInput){
+    if (usernameInput == users.nom &&       // Si la valeur de nom est = au nom de users et
+        passwordInput == users.password) {  // la valeur de mdp est = au mdp de users
+            open('main.html');              // Ouvre la page web voulue
+            close('login.html')};           // Fermer la page actuelle
+};
 
 // Fonction qui amène la page login
-function to_login(){
+function to_login(passwordInput, usernameInput){
     if (usernameInput !== "" &&     // Si la valeur de nom est différent à rien et
         passwordInput !== "") {         // la valeur de mdp est différente à rien
             open('login.html');     // Ouvre la page login

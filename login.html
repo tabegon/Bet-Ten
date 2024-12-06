@@ -10,7 +10,7 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form name="formulaire" id="loginForm" action="" method="post" onsubmit="return enter()">
+                    <form name="formulaire" id="loginForm" action="" method="POST" onsubmit="return enter(document.forms['formulaire']['mdp'].value, document.forms['formulaire']['name'].value)">
                         <h2>Login</h2>
                         <div class="inputbox">
                             <input name="name" type="text" required>
@@ -30,7 +30,6 @@
                             <p>Pas de compte? <a href="register.html">S'Inscrire</a></p>
 
                         </div>
-
                     </form>
                 </div>
             </div>

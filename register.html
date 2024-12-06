@@ -10,14 +10,14 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form id="loginForm" action="" method="post" onsubmit="to_login()">
+                    <form id="loginForm" action="" method="post" onsubmit="to_login(document.forms['loginForm']['mdp'].value, document.forms['loginForm']['name'].value)">
                         <h2>Register</h2>
                         <div class="inputbox">
-                            <input id="username" type="text" required>
+                            <input id="name" type="text" required>
                             <label for="username">Surnom</label>
                         </div>
                         <div class="inputbox">
-                            <input id="password" type="password" required>
+                            <input id="mdp" type="password" required>
                             <label for="password">Mot-de-passe</label>
                         </div>
                         <input class="valider" type="submit" value="S'INSCRIRE">
