@@ -99,6 +99,14 @@ h3{
     border-radius: 30px;
     padding: 20px;
 }
+
+.box{
+    margin: 15px;
+    background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
+    border-radius: 30px;
+    padding: 20px;
+}
+
 #player{
     margin: 15px;
     background: linear-gradient(135deg, #A0522D, #cb7b45);
@@ -113,9 +121,13 @@ a{
     text-decoration: none;
 }
 
-.link {
+.link_in_box {
     cursor: pointer;
     text-decoration: none; /* Enlever le soulignement */
+    margin: 15px;
+    background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
+    border-radius: 30px;
+    padding: 20px;
 }
 
 .classement{
