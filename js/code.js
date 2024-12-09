@@ -1,7 +1,7 @@
 // Afficher l'heure
 setInterval(() => document.getElementById('clock').innerText = new Date().toLocaleTimeString(), 1000);
 
-
+// Fonction qui ouvre/ferme la sidebar
 function toggleSidebar(){
     const toggleButton = document.getElementById('toggle-btn')
     const sidebar = document.getElementById('nav')
