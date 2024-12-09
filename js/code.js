@@ -1,6 +1,14 @@
 // Afficher l'heure
 setInterval(() => document.getElementById('clock').innerText = new Date().toLocaleTimeString(), 1000);
 
+// Fonction qui ouvre/ferme la sidebar
+function toggleSidebar(){
+    const toggleButton = document.getElementById('toggle-btn')
+    const sidebar = document.getElementById('nav')
+    sidebar.classList.toggle('close')
+    toggleButton.classList.toggle('rotate')
+}
+
 // Fonction pour afficher une animation après un pari
 function showAnimation(result, correctAnswer) {
     const anim = document.getElementById('animation');  // Récupère l'élément par l'id 'animation' et le met dans la constante anim

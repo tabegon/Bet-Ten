@@ -6,19 +6,20 @@
 }
 body{
     background-color: rgb(37, 37, 37);
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 .haut{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: -200px;
     position: fixed;
     width: 98%;
     z-index: 1;
     text-align: center;
     color: white;
-    padding: 1%;
+    padding: 1em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -60,16 +61,93 @@ h3{
 }
 /* Main Navigation (Tabs) */
 
+
 #nav {
-    position: fixed;
-    width: 100%;
-    z-index: 0;
-    margin-top: -100px;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 250px;
+    padding: 5px 1em;
     background-color: #1a1a1a;
-    padding: 10px;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
+    text-wrap: nowrap;
 }
+
+#nav.close{
+    padding: 5px;
+    width: 60px;
+    svg{
+        margin-left: -11px;
+    }
+}
+
+#nav ul{
+    list-style: none;
+}
+
+#nav > ul > li{
+    margin-bottom: 10px;
+}
+
+#nav > ul > li:first-child{
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+#nav ul li a.active {
+    border: 1px solid rgba(102, 42, 126, 0.548);
+}
+
+#nav a{
+    border-radius: 5em;
+    padding: .85em;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1.1em;
+}
+
+#nav svg{
+    flex-shrink: 0;
+    fill: #fff;
+}
+
+#nav a span{
+    flex-grow: 1;
+}
+
+#nav a:hover {
+    background: linear-gradient(135deg, #006e89, #A0522D);
+    transform: scale(1.1);
+}
+
+#toggle-btn{
+    margin-top: 100px;
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+    svg{
+        transition: rotate 200ms ease;
+    }
+}
+
+#toggle-btn:hover{
+    background: linear-gradient(135deg, #006e89, #A0522D);
+}
+
+.rotate svg:last-child{
+    rotate: 180deg;
+}
+
 #nav a {
     color: #fff;
     background-color: #1a1a1a;
@@ -80,17 +158,29 @@ h3{
     font-weight: 600;
     transition: all 1s;
 }
-#nav a:hover {
-    background: linear-gradient(135deg, #006e89, #A0522D);
-    transform: scale(1.1);
-}
 
-.active{
-    border: 2px solid rgb(42, 40, 40);
+@media(max-width: 800px){
+    #nav{
+        padding: 5px;
+        width: 60px;
+        svg{
+            margin-left: -11px;
+        }
+    #toggle-btn{
+        display: none;
+    }
+    }
+    #nav > ul > li:first-child{
+        text-decoration: none;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 6px;
+        margin-top: 100px;
+    }
 }
 
 .main{
-    margin-top: 200px;
+    margin-top: 125px;
 }
 
 
@@ -173,6 +263,101 @@ a{
 }
 
 
+/*ChatGPT*/
+
+.container {
+	width: 90%;
+	margin: 20px auto;
+	max-width: 1200px;
+}
+.player-card {
+	background-color: rgb(37, 37, 37);
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.player-info {
+	width: 60%;
+}
+.player-stats {
+	width: 35%;
+}
+.player-stats table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.player-stats table, .player-stats th, .player-stats td {
+	border: 1px solid #ddd;
+}
+.player-stats th, .player-stats td {
+	padding: 8px;
+	text-align: left;
+}
+.highlight {
+	font-weight: bold;
+	color: #007bff;
+}
+
+.bet-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.bet-box {
+	background-color: #007bff;
+	color: white;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	padding: 15px 25px;
+	cursor: pointer;
+	margin: 0 10px;
+	transition: background-color 0.3s;
+}
+.bet-box:hover {
+	background-color: #0056b3;
+}
+.bet-box.paried {
+	background-color: #28a745; /* Couleur pour signaler un pari */
+	cursor: not-allowed;
+}
+.quantity-selector {
+	display: flex;
+	align-items: center;
+}
+.quantity-display {
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 15px;
+	color: #333;
+}
+.quantity-btn {
+	font-size: 20px;
+	background-color: #f4f4f4;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s;
+}
+.quantity-btn:hover {
+	background-color: #e0e0e0;
+}
+
+/*Retour*/
 
 .item{
     display: flex;

@@ -1,13 +1,8 @@
-- Login -> membre, invité, admin
 - menu latéral quand fenêtre trop petite
-- rendre bouton joueur clickable
-- horloge
-- boite clickable
-- bouton tournoi en cours + pari au milieu
-- Styles à ajouter
 
 IMPORTANT:
 - SYSTEME DE POINTS
 - SYSTEME DE PARIS
 - SYSTEME DE MEMBRE
 - STYLES
+
