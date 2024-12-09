@@ -6,19 +6,20 @@
 }
 body{
     background-color: rgb(37, 37, 37);
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 .haut{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: -200px;
     position: fixed;
     width: 98%;
     z-index: 1;
     text-align: center;
     color: white;
-    padding: 1%;
+    padding: 1em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -60,16 +61,94 @@ h3{
 }
 /* Main Navigation (Tabs) */
 
+
 #nav {
-    position: fixed;
-    width: 100%;
-    z-index: 0;
-    margin-top: -100px;
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 250px;
+    margin-top: 100px;
+    padding: 5px 1em;
     background-color: #1a1a1a;
-    padding: 10px;
+    border-right: #fff;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out;
+    overflow: hidden;
 }
+
+#nav.close{
+    padding: 5px;
+    width: 60px;
+}
+
+#nav ul{
+    list-style: none;
+}
+
+#nav > ul > li{
+    margin-bottom: 10px;
+}
+
+#nav > ul > li:first-child{
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+#nav ul li .active a {
+    color: rgb(42, 40, 40);
+    svg{
+        fill: rgb(42, 40, 40);
+    }
+}
+
+#nav a{
+    border-radius: 5em;
+    padding: .85em;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1.1em;
+}
+
+#nav svg{
+    flex-shrink: 0;
+    fill: #fff;
+    margin-left: -11px;
+}
+
+#nav a span{
+    flex-grow: 1;
+}
+
+#nav a:hover {
+    background: linear-gradient(135deg, #006e89, #A0522D);
+    transform: scale(1.1);
+}
+
+#toggle-btn{
+    margin-left: auto;
+    padding: 1em;
+    border: none;
+    border-radius: .5em;
+    background: none;
+    cursor: pointer;
+    svg{
+        transition: rotate 200ms ease;
+    }
+}
+
+#toggle-btn:hover{
+    background: linear-gradient(135deg, #006e89, #A0522D);
+}
+
+.rotate svg:last-child{
+    rotate: 180deg;
+}
+
 #nav a {
     color: #fff;
     background-color: #1a1a1a;
@@ -80,17 +159,14 @@ h3{
     font-weight: 600;
     transition: all 1s;
 }
-#nav a:hover {
-    background: linear-gradient(135deg, #006e89, #A0522D);
-    transform: scale(1.1);
-}
+
 
 .active{
     border: 2px solid rgb(42, 40, 40);
 }
 
 .main{
-    margin-top: 200px;
+    margin-top: 125px;
 }
 
 
