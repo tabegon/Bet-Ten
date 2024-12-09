@@ -251,32 +251,8 @@ a{
 }
 
 
+/*ChatGPT*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 .container {
 	width: 90%;
 	margin: 20px auto;
@@ -314,10 +290,6 @@ a{
 	color: #007bff;
 }
 
-
-
-
-}
 .bet-container {
 	display: flex;
 	align-items: center;
@@ -373,33 +345,7 @@ a{
 	background-color: #e0e0e0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*Retour*/
 
 .item{
     display: flex;
