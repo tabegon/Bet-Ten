@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>BET-TEN</title>
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/style1.css">
+        <script src="js/code.js"></script>
+    </head>
+    <body>
+        <div id="classement" class="haut">
+            <div id="clock"></div>
+            <h1>BET-TEN</h1>
+            <br>
+        </div>
+        
+
+        <div id="nav">
+            <a href="main.html">Accueil</a>
+            <a class="active" href="classement.html">Classement</a>
+            <a href="quizz.html">Quiz</a>
+            <a href="Paris.html">Paris</a>
+			<a href="Information.html">Informations</a>
+        </div>
+		
+		<div class="main">
+            <div class="container">
+
+    <!-- Joueur 1 -->
+    <div class="player-card">
+        <div class="player-info">
+            <h2>Rafael Nadal</h2>
+            <p><span class="highlight">Classement ATP :</span> 4e</p>
+            <p><span class="highlight">Tournoi en cours :</span> Roland-Garros</p>
+            <p><span class="highlight">Parcours :</span> Victoires en 1/8e, 1/4, et 1/2 finales.</p>
+            <p><span class="highlight">Dernier match :</span> Victoire contre Carlos Alcaraz (6-3, 6-4, 6-2)</p>
+        </div>
+        <div class="player-stats">
+            <h3>Statistiques</h3>
+            <table>
+                <tr>
+                    <th>Statistique</th>
+                    <th>Valeur</th>
+                </tr>
+                <tr>
+                    <td>Titres remportés cette année</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Matchs gagnés</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>Matchs perdus</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Chances de gagner</td>
+                    <td>65%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Joueur 2 -->
+    <div class="player-card">
+        <div class="player-info">
+            <h2>Novak Djokovic</h2>
+            <p><span class="highlight">Classement ATP :</span> 2e</p>
+            <p><span class="highlight">Tournoi en cours :</span> Roland-Garros</p>
+            <p><span class="highlight">Parcours :</span> Victoires en 1/8e, 1/4, et 1/2 finales.</p>
+            <p><span class="highlight">Dernier match :</span> Victoire contre Daniil Medvedev (7-5, 6-7, 6-4)</p>
+        </div>
+        <div class="player-stats">
+            <h3>Statistiques</h3>
+            <table>
+                <tr>
+                    <th>Statistique</th>
+                    <th>Valeur</th>
+                </tr>
+                <tr>
+                    <td>Titres remportés cette année</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Matchs gagnés</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>Matchs perdus</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Chances de gagner</td>
+                    <td>75%</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+<div class="bet-container">
+    <!-- Bouton pour parier sur le joueur 1 -->
+    <button id="betPlayer1" class="bet-box" onclick="placeBet('Player 1', 'betPlayer1')">
+        Parier sur Joueur 1
+    </button>
+
+    <!-- Sélecteur de quantité -->
+    <div class="quantity-selector">
+        <button class="quantity-btn" onclick="updateQuantity(-10)">-</button>
+        <div class="quantity-display" id="quantity">10</div>
+        <button class="quantity-btn" onclick="updateQuantity(10)">+</button>
+    </div>
+
+    <!-- Bouton pour parier sur le joueur 2 -->
+    <button id="betPlayer2" class="bet-box" onclick="placeBet('Player 2', 'betPlayer2')">
+        Parier sur Joueur 2
+    </button>
+</div>
+
+<script>
+    let quantity = 10; // Valeur initiale
+
+    // Met à jour la quantité en fonction de l'incrément (ou décrément)
+    function updateQuantity(change) {
+        quantity += change;
+        if (quantity < 10) quantity = 10; // La quantité minimale est 10
+        document.getElementById('quantity').textContent = quantity;
+    }
+
+    // Fonction pour placer un pari
+    function placeBet(player, buttonId) {
+        const button = document.getElementById(buttonId);
+
+        // Vérifie si un pari a déjà été effectué
+        if (button.classList.contains('paried')) {
+            alert(`Vous avez déjà parié sur ${player}.`);
+            return;
+        }
+
+        // Ajoute la classe pour changer la couleur et signale un pari
+        button.classList.add('paried');
+        alert(`Vous avez parié ${quantity} points sur ${player}.`);
+    }
+</script>
+
+</div>
+		</div>
+    </body>
+</html>

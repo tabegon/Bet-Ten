@@ -252,6 +252,155 @@ a{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+.container {
+	width: 90%;
+	margin: 20px auto;
+	max-width: 1200px;
+}
+.player-card {
+	background-color: rgb(37, 37, 37);
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.player-info {
+	width: 60%;
+}
+.player-stats {
+	width: 35%;
+}
+.player-stats table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.player-stats table, .player-stats th, .player-stats td {
+	border: 1px solid #ddd;
+}
+.player-stats th, .player-stats td {
+	padding: 8px;
+	text-align: left;
+}
+.highlight {
+	font-weight: bold;
+	color: #007bff;
+}
+
+
+
+
+}
+.bet-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.bet-box {
+	background-color: #007bff;
+	color: white;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	padding: 15px 25px;
+	cursor: pointer;
+	margin: 0 10px;
+	transition: background-color 0.3s;
+}
+.bet-box:hover {
+	background-color: #0056b3;
+}
+.bet-box.paried {
+	background-color: #28a745; /* Couleur pour signaler un pari */
+	cursor: not-allowed;
+}
+.quantity-selector {
+	display: flex;
+	align-items: center;
+}
+.quantity-display {
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 15px;
+	color: #333;
+}
+.quantity-btn {
+	font-size: 20px;
+	background-color: #f4f4f4;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.3s;
+}
+.quantity-btn:hover {
+	background-color: #e0e0e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .item{
     display: flex;
     flex-direction: row;    
