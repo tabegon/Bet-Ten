@@ -3,10 +3,10 @@ setInterval(() => document.getElementById('clock').innerText = new Date().toLoca
 
 // Fonction qui ouvre/ferme la sidebar
 function toggleSidebar(){
-    const toggleButton = document.getElementById('toggle-btn')
-    const sidebar = document.getElementById('nav')
-    sidebar.classList.toggle('close')
-    toggleButton.classList.toggle('rotate')
+    const toggleButton = document.getElementById('toggle-btn')  // Récupère l'élément par l'id 'toggle-btn' et le met dans la constante toggleButton
+    const sidebar = document.getElementById('nav')              // Récupère l'élément par l'id 'nav' et le met dans la constante sidebar
+    sidebar.classList.toggle('close')                           // Ajoute classe close à sidebar
+    toggleButton.classList.toggle('rotate')                     // Ajoute classe rotate toggleButton
 }
 
 // Fonction pour afficher une animation après un pari
