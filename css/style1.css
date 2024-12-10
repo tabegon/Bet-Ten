@@ -257,17 +257,33 @@ a{
 }
 
 .clique{
+    display: flex;
     margin: 15px;
     background: linear-gradient(135deg, #3A9D23, #5EAE4C);
     border-radius: 50px;
     padding: 20px;
 	height: 200px;
-	width: 500px;
+	width: 90%;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 1000px){
+    .Paris{
+        flex-direction: column;
+    }
+}
+
+#match{
+    margin: 15px;
+    background: linear-gradient(135deg, #3A9D23, #5EAE4C);
+    padding: 20px;
     font-size: 30px;
     font-weight: bold;
 	text-align: center;
 }
-
 
 /*ChatGPT*/
 
