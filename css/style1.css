@@ -254,6 +254,7 @@ a{
     gap: 20px;
     position: relative;
     transition: all 0.3s ease;
+    flex-wrap: wrap;
 }
 
 .clique{
@@ -270,11 +271,7 @@ a{
     justify-content: center;
 }
 
-@media(max-width: 1000px){
-    .Paris{
-        flex-direction: column;
-    }
-}
+
 
 #match{
     margin: 15px;
