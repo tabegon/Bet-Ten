@@ -18,7 +18,9 @@ section{
 .form-box{
     position: relative;
     width: 400px;
-    height: 450px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background: transparent;
     border: 2px solid white;
     border-radius: 20px;
