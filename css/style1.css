@@ -229,7 +229,6 @@ a{
     font-weight: bold;
     /*-------------------------------------------------------------*/
     height: 25px;
-    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
