@@ -3,11 +3,10 @@ import sqlite3
 from flask import Flask, redirect, request
 
 def get_user(username, password):
-    query = f'''SELECT * FROM users WHERE username = "{username}"'''
-    print(query)
+    query = f'''SELECT * FROM users WHERE username = ?'''
     conn = sqlite3.connect('tennis.db')
     c = conn.cursor()
-    c.execute(query)
+    c.execute('SELECT * FROM users WHERE username = ?', (username,))
     conn.commit()
     result = c.fetchone()
     conn.close()
@@ -35,7 +34,7 @@ def create_user(prenom, nom, username, password):
     conn = sqlite3.connect('tennis.db')
     c = conn.cursor()
     c.execute(f'''INSERT INTO users (prenom, nom, username, password, points)
-                VALUES ("{prenom}", "{nom}", "{username}", "{password}", 100);''')
+                VALUES (?, ?, ?, ?, 100);''', (prenom, nom, username, password))
     conn.commit()
     conn.close()
     
