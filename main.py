@@ -2,6 +2,21 @@ import hashlib
 import sqlite3
 from flask import Flask, redirect, request
 
+def get_user(username, password):
+    query = f'''SELECT * FROM users WHERE username = "{username}"'''
+    print(query)
+    conn = sqlite3.connect('tennis.db')
+    c = conn.cursor()
+    c.execute(query)
+    conn.commit()
+    result = c.fetchone()
+    conn.close()
+    if not result:
+        return None
+    if result[4] == hashlib.md5(password.encode()).hexdigest():
+        return result
+    return None
+
 def create_database():
     conn = sqlite3.connect('tennis.db')
     c = conn.cursor()
@@ -40,7 +55,6 @@ def hello_world():
 
 @app.route("/new_user", methods = ['POST'])
 def new_user():
-    print(request.form.get('prenom'))
     prenom = request.form.get('prenom')
     nom = request.form.get('nom')
     username = request.form.get('username')
@@ -50,3 +64,12 @@ def new_user():
         create_user(prenom, nom, username, password_cryptee)
         return redirect("/login.html?userCreated=true", code=302)
     return redirect("/login.html?userCreated=false", code=302)
+
+@app.route("/login", methods = ['POST'])
+def auth():
+    username = request.form.get('username')
+    password = request.form.get('password')
+    user = get_user(username, password)
+    if user:
+        return redirect("/main.html", code=302)
+    return redirect("/login.html?Error=true", code=302)

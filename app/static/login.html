@@ -10,14 +10,14 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
-                    <form name="formulaire" id="loginForm" action="" method="POST" onsubmit="return enter(document.forms['formulaire']['mdp'].value, document.forms['formulaire']['name'].value)">
+                    <form name="formulaire" id="loginForm" action="/login" method="POST">
                         <h2>Login</h2>
                         <div class="inputbox">
-                            <input name="name" type="text" required>
+                            <input name="username" type="text" required>
                             <label for="username">Surnom</label>
                         </div>
                         <div class="inputbox">
-                            <input name="mdp" type="password" required>
+                            <input name="password" type="password" required>
                             <label for="password">Mot-de-passe</label>
                         </div>
                         <div class="forget">
