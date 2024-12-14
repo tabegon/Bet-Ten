@@ -5,3 +5,6 @@ Requirements :
 
 Création d'un environnement virtuel:
 python -m venv 
+.\venv\Scripts\activate 
+
+pip install flask 
