@@ -1,6 +1,9 @@
 import hashlib
 import sqlite3
-from flask import Flask, redirect, request
+from flask import Flask, redirect, request, session
+
+from app.decorator.auth import login_required
+
 
 def get_user(username, password):
     query = f'''SELECT * FROM users WHERE username = ?'''
@@ -43,14 +46,16 @@ app = Flask(__name__,
             static_url_path='',
             static_folder='app/static')
 
+app.secret_key = 'super secret key'
 
 @app.route("/")
 def index():
     return redirect("/login.html", code=302)
 
 @app.route("/hello")
+@login_required
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return f"<p>Hello, {session['user_prenom']}!</p>"
 
 @app.route("/new_user", methods = ['POST'])
 def new_user():
@@ -64,11 +69,19 @@ def new_user():
         return redirect("/login.html?userCreated=true", code=302)
     return redirect("/login.html?userCreated=false", code=302)
 
+
 @app.route("/login", methods = ['POST'])
 def auth():
     username = request.form.get('username')
     password = request.form.get('password')
     user = get_user(username, password)
     if user:
+        session['user_id'] = user[0]
+        session['user_prenom'] = user[1]
         return redirect("/main.html", code=302)
     return redirect("/login.html?Error=true", code=302)
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect('/login.html')
