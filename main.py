@@ -1,8 +1,8 @@
 import hashlib
 import sqlite3
-from flask import Flask, redirect, request, session
+from flask import Flask, redirect, render_template, request, session
 
-from app.decorator.auth import login_required
+from decorator.auth import login_required
 
 
 def get_user(username, password):
@@ -42,9 +42,7 @@ def create_user(prenom, nom, username, password):
     conn.close()
     
 create_database()
-app = Flask(__name__,
-            static_url_path='',
-            static_folder='app/static')
+app = Flask(__name__)
 
 app.secret_key = 'super secret key'
 
@@ -85,3 +83,7 @@ def auth():
 def logout():
     session.clear()
     return redirect('/login.html')
+
+@app.get("/information")
+def information():
+    return render_template('information.html')

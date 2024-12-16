@@ -4,7 +4,7 @@ Requirements :
 - Flask
 
 Création d'un environnement virtuel:
-python -m venv
+python -m venv .venv
 .\venv\Scripts\activate
 
 pip install flask
