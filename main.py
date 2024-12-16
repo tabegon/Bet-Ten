@@ -48,7 +48,7 @@ app.secret_key = 'super secret key'
 
 @app.route("/")
 def index():
-    return redirect("/login.html", code=302)
+    return render_template("/login.html")
 
 @app.route("/hello")
 @login_required
@@ -64,8 +64,8 @@ def new_user():
     if password :
         password_cryptee = hashlib.md5(password.encode()).hexdigest()
         create_user(prenom, nom, username, password_cryptee)
-        return redirect("/login.html?userCreated=true", code=302)
-    return redirect("/login.html?userCreated=false", code=302)
+        return redirect("/login") #?userCreated=true
+    return redirect("/login") #?userCreated=false
 
 
 @app.route("/login", methods = ['POST'])
@@ -76,14 +76,40 @@ def auth():
     if user:
         session['user_id'] = user[0]
         session['user_prenom'] = user[1]
-        return redirect("/main.html", code=302)
-    return redirect("/login.html?Error=true", code=302)
+        session['user_points'] = user[5]
+        return redirect("/accueil")
+    return redirect("/login") #?Error=true -> msg d'erreur
 
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect('/login.html')
+    return redirect('/')
 
 @app.get("/information")
 def information():
-    return render_template('information.html')
+    if session:
+        return render_template('information.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
+    return render_template('information.html', nom='Invité', points='0', log='Login')
+
+@app.get("/classement")
+def classement():
+    if session:
+        return render_template('classement.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
+    return render_template('classement.html', nom='Invité', points='0', log='Login')
+
+@app.get("/accueil")
+def accueil():
+    if session:
+        return render_template('accueil.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
+    return render_template('accueil.html', nom='Invité', points='0', log='Login')
+
+@app.get("/quiz")
+@login_required
+def quiz():
+    if session:
+        return render_template('quiz.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
+    return render_template('quiz.html', nom='Invité', points='0', log='Login')
+
+@app.get("/register")
+def register():
+    return render_template('register.html')
