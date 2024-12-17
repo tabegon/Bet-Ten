@@ -1,3 +1,10 @@
+:root{
+    --base-clr : #111622;
+    --box-clr : #2c2b2c;
+    --orange-clr : #d35335;
+    --orange-gradient-clr : linear-gradient(135deg, #A0522D, #cb7b45);
+}
+
 *{
     margin: 0;
     padding: 0;
