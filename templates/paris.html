@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Paris{% endblock %}
+{% block id %}paris_ban{% endblock %}
+
+{% block content %}
+<div class="box">
+    <h2>Parier sur les matchs a venir</h2>
+ </div>
+ 
+ <div class="Paris">
+     
+ <!-- Liste des joueurs (à générer dynamiquement en JS) -->
+     <div class="clique" onclick="location.href='Paris_tournois_en_cours.html'">
+     <a href="Paris_tournois_en_cours.html">Tournoi en cours</a>
+     </div>
+     <div class="clique" onclick="location.href='Paris_Vos_paris.html'">
+     <a href="Paris_Vos_paris.html">Vos paris</a>
+     </div>
+ 
+ </div>
+ {% endblock %}

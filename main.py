@@ -64,8 +64,8 @@ def new_user():
     if password :
         password_cryptee = hashlib.md5(password.encode()).hexdigest()
         create_user(prenom, nom, username, password_cryptee)
-        return redirect("/login") #?userCreated=true
-    return redirect("/login") #?userCreated=false
+        return redirect("/") #?userCreated=true
+    return redirect("/") #?userCreated=false
 
 
 @app.route("/login", methods = ['POST'])
@@ -113,3 +113,10 @@ def quiz():
 @app.get("/register")
 def register():
     return render_template('register.html')
+
+@app.get("/paris")
+@login_required
+def paris():
+    if session:
+        return render_template('paris.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
+    return render_template('paris.html', nom='Invité', points='0', log='Login')
