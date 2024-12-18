@@ -1,8 +1,10 @@
 :root{
-    --base-clr : #111622;
+    /*--base-clr : #111622;
     --box-clr : #2c2b2c;
     --orange-clr : #d35335;
-    --orange-gradient-clr : linear-gradient(135deg, #A0522D, #cb7b45);
+    --orange-gradient-clr : linear-gradient(135deg, #A0522D, #cb7b45);*/
+    --base-clr : #181A1C;
+    --accent-clr : #212327;
 }
 
 *{
@@ -12,7 +14,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color: rgb(37, 37, 37);
+    background-color: var(--base-clr);
     display: grid;
     grid-template-columns: auto 1fr;
 }
@@ -87,6 +89,7 @@ h3{
     transition: 300ms ease-in-out;
     overflow: hidden;
     text-wrap: nowrap;
+    border-right: 1px solid rgba(255, 255, 255, 0.411);
 }
 
 #nav.close{
@@ -199,14 +202,14 @@ h3{
 
 .box{
     margin: 15px;
-    background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
+    background-color: var(--accent-clr);
     border-radius: 30px;
     padding: 20px;
 }
 
 #player{
     margin: 15px;
-    background: linear-gradient(135deg, #A0522D, #cb7b45);
+    background-color: var(--accent-clr);
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -222,7 +225,7 @@ a{
     cursor: pointer;
     text-decoration: none; /* Enlever le soulignement */
     margin: 15px;
-    background: linear-gradient(to bottom, rgb(44, 44, 44), #1a1919);
+    background-color: var(--accent-clr);
     border-radius: 30px;
     padding: 20px;
 }
