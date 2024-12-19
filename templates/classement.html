@@ -6,82 +6,13 @@
 {% block content %}
 <div class="box">
     <h2>Classement des 100 premiers joueurs</h2>
- </div>
-     <div class="classement" onclick="location.href='novak_djokovic.html'">
-     <div class="item">1</div>
-     <div class="item">Novak Djokovic</div>
-     <div class="item">12345</div>
- </div>
+    </div>
+    {% for joueur in joueurs %}
 
- <div class="classement" onclick="location.href='carlos_alcaraz.html'">
-     <div class="item">2</div>
-     <div class="item">Carlos Alcaraz</div>
-     <div class="item">11890</div>
- </div>
-
- <div class="classement" onclick="location.href='daniil_medvedev.html'">
-     <div class="item">3</div>
-     <div class="item">Daniil Medvedev</div>
-     <div class="item">10430</div>
- </div>
-
- <div class="classement" onclick="location.href='jannik_sinner.html'">
-     <div class="item">4</div>
-     <div class="item">Jannik Sinner</div>
-     <div class="item">9820</div>
- </div>
-
- <div class="classement" onclick="location.href='stefanos_tsitsipas.html'">
-     <div class="item">5</div>
-     <div class="item">Stefanos Tsitsipas</div>
-     <div class="item">8740</div>
- </div>
-
- <div class="classement" onclick="location.href='andrey_rublev.html'">
-     <div class="item">6</div>
-     <div class="item">Andrey Rublev</div>
-     <div class="item">8250</div>
- </div>
-
- <div class="classement" onclick="location.href='Alexander_Zveref.html'">
-     <div class="item">7</div>
-     <div class="item">Alexander Zverev</div>
-     <div class="item">7890</div>
- </div>
-
- <div class="classement" onclick="location.href='taylor_fritz.html'">
-     <div class="item">8</div>
-     <div class="item">Taylor Fritz</div>
-     <div class="item">7520</div>
- </div>
-
- <div class="classement" onclick="location.href='holger_rune.html'">
-     <div class="item">9</div>
-     <div class="item">Holger Rune</div>
-     <div class="item">7240</div>
- </div>
-
- <div class="classement" onclick="location.href='casper_ruud.html'">
-     <div class="item">10</div>
-     <div class="item">Casper Ruud</div>
-     <div class="item">6980</div>
- </div>
-
- <div class="classement" onclick="location.href='felix_augier.html'">
-     <div class="item">11</div>
-     <div class="item">Felix Auger-Aliassime</div>
-     <div class="item">6700</div>
- </div>
-
- <div class="classement" onclick="location.href='frances_tiafoe.html'">
-     <div class="item">12</div>
-     <div class="item">Frances Tiafoe</div>
-     <div class="item">6500</div>
- </div>
-
- <div class="classement" onclick="location.href='hubert_hurkacz.html'">
-     <div class="item">13</div>
-     <div class="item">Hubert Hurkacz</div>
-     <div class="item">6400</div>
- </div>
+     <div class="classement" onclick="location.href='{{url_for("fiche_joueur", joueur_id=joueur['id'])}}'">
+        <div class="item">{{joueur['id']}}</div>
+        <div class="item">{{joueur['nom_complet']}}</div>
+        <div class="item">12345</div>
+    </div>
+    {% endfor %}
  {% endblock %}

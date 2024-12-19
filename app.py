@@ -1,8 +1,9 @@
 import hashlib
+import os
 import sqlite3
-from flask import Flask, flash, redirect, render_template, request, session, url_for
+from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 
-from database.database import create_database, create_user, get_user
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_user
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -68,7 +69,8 @@ def information():
 
 @app.get("/classement")
 def classement():
-    return render_template('classement.html')
+    joueurs = get_joueurs()
+    return render_template('classement.html', joueurs=joueurs)
 
 
 @app.get("/quiz")
@@ -81,6 +83,21 @@ def quiz():
 @login_required
 def paris():
     return render_template('paris.html')
+
+@app.get("/classement/joueur/<int:joueur_id>")
+def fiche_joueur(joueur_id):
+    joueur = get_joueur(joueur_id)
+    if not joueur:
+        print('no joueur')
+        abort(404)
+    chemin_fichier = os.path.join(app.root_path, joueur['fichier_html'])
+    try:
+        with open(chemin_fichier, 'r', encoding='utf-8') as f:
+            contenu = f.read()
+    except FileNotFoundError:
+        print('pas de fichier' )
+        abort(404)
+    return render_template('joueur.html', joueur=joueur, contenu=contenu)
 
 if __name__ == '__name__':
     app.run(host='localhost', port=5000, debug=True)
