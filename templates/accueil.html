@@ -15,16 +15,16 @@
     <strong>BET-TEN</strong> Est un projet crée par 2 personnes, Guillaume et Théo. Il est né d'un travail pris un peu trop au serieux. C'est ce serieux qui aujourd'hui a donner naissance a ce site.
 </div>
 
-<div class="link_in_box" onclick="location.href='classement.html'">
-    <h2>Classement :</h2>
-    <div id="player">
-        <a href="classement.html">1 - Jannik Sinner - 1033</a>
+<div class="link_in_box">
+    <h2><a href="{{url_for('classement')}}">Classement :</a></h2>
+    <div class="player">
+        <a href="{{url_for('classement')}}">1 - Jannik Sinner - 1033</a>
     </div>                        
-    <div id="player">             
-        <a href="classement.html">2 - Alexander Zverev - 7315</a>
+    <div class="player">             
+        <a href="{{url_for('classement')}}">2 - Alexander Zverev - 7315</a>
     </div>
-    <div id="player">
-        <a href="classement.html">3 - Carlos Alcaraz - 6810</a>
+    <div class="player">
+        <a href="{{url_for('classement')}}">3 - Carlos Alcaraz - 6810</a>
     </div>
 </div>
 {% endblock %}
