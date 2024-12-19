@@ -1,9 +1,10 @@
 import hashlib
 import sqlite3
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 
 from database.database import create_database, create_user, get_user
 from decorator.auth import login_required
+from helpers import check_password, encode_password
 
 
 
@@ -34,7 +35,7 @@ def register_action():
     username = request.form.get('username')
     password = request.form.get('password')
     if password :
-        password_cryptee = hashlib.md5(password.encode()).hexdigest()
+        password_cryptee = encode_password(password)
         create_user(prenom, nom, username, password_cryptee)
         return redirect(url_for('login')) #?userCreated=true
     return redirect(url_for("register")) #?userCreated=false
@@ -44,13 +45,17 @@ def register_action():
 def login_action():
     username = request.form.get('username')
     password = request.form.get('password')
-    user = get_user(username, password)
-    if user:
-        session['user_id'] = user[0]
-        session['user_prenom'] = user[1]
-        session['user_points'] = user[5]
-        return redirect(url_for('index'))
-    return redirect(url_for('login')) #?Error=true -> msg d'erreur
+    user = get_user(username)
+    if not user:
+        flash("Nom d'utilisateur n'existe pas")
+        return redirect(url_for('login'))
+    if not check_password(password_bd=user['password'], input_password=password):
+        flash("Password incorrect")
+        return redirect(url_for('login'))
+    session['user_id'] = user['id']
+    session['user_prenom'] = user['prenom']
+    session['user_points'] = user['points']
+    return redirect(url_for('index'))
 
 @app.route("/logout")
 def logout():
