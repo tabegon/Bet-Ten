@@ -1,12 +1,11 @@
 import hashlib
 import sqlite3
-from flask import Flask, redirect, render_template, request, session
+from flask import Flask, redirect, render_template, request, session, url_for
 
 from decorator.auth import login_required
 
 
 def get_user(username, password):
-    query = f'''SELECT * FROM users WHERE username = ?'''
     conn = sqlite3.connect('tennis.db')
     c = conn.cursor()
     c.execute('SELECT * FROM users WHERE username = ?', (username,))
@@ -48,15 +47,20 @@ app.secret_key = 'super secret key'
 
 @app.route("/")
 def index():
+    return render_template("/accueil.html")
+
+
+
+@app.get('/login')
+def login():
     return render_template("/login.html")
 
-@app.route("/hello")
-@login_required
-def hello_world():
-    return f"<p>Hello, {session['user_prenom']}!</p>"
+@app.get('/register')
+def register():
+    return render_template('/register.html')
 
-@app.route("/new_user", methods = ['POST'])
-def new_user():
+@app.post("/register")
+def register_action():
     prenom = request.form.get('prenom')
     nom = request.form.get('nom')
     username = request.form.get('username')
@@ -64,12 +68,12 @@ def new_user():
     if password :
         password_cryptee = hashlib.md5(password.encode()).hexdigest()
         create_user(prenom, nom, username, password_cryptee)
-        return redirect("/") #?userCreated=true
-    return redirect("/") #?userCreated=false
+        return redirect(url_for('login')) #?userCreated=true
+    return redirect(url_for("register")) #?userCreated=false
 
 
-@app.route("/login", methods = ['POST'])
-def auth():
+@app.post("/login")
+def login_action():
     username = request.form.get('username')
     password = request.form.get('password')
     user = get_user(username, password)
@@ -77,46 +81,33 @@ def auth():
         session['user_id'] = user[0]
         session['user_prenom'] = user[1]
         session['user_points'] = user[5]
-        return redirect("/accueil")
-    return redirect("/login") #?Error=true -> msg d'erreur
+        return redirect(url_for('index'))
+    return redirect(url_for('login')) #?Error=true -> msg d'erreur
 
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect('/')
+    return redirect(url_for('login'))
 
 @app.get("/information")
 def information():
-    if session:
-        return render_template('information.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
-    return render_template('information.html', nom='Invité', points='0', log='Login')
+    return render_template('information.html')
 
 @app.get("/classement")
 def classement():
-    if session:
-        return render_template('classement.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
-    return render_template('classement.html', nom='Invité', points='0', log='Login')
+    return render_template('classement.html')
 
-@app.get("/accueil")
-def accueil():
-    if session:
-        return render_template('accueil.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
-    return render_template('accueil.html', nom='Invité', points='0', log='Login')
 
 @app.get("/quiz")
 @login_required
 def quiz():
-    if session:
-        return render_template('quiz.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
-    return render_template('quiz.html', nom='Invité', points='0', log='Login')
+    return render_template('quiz.html')
 
-@app.get("/register")
-def register():
-    return render_template('register.html')
 
 @app.get("/paris")
 @login_required
 def paris():
-    if session:
-        return render_template('paris.html', nom=session['user_prenom'], points=session['user_points'], log='Logout')
-    return render_template('paris.html', nom='Invité', points='0', log='Login')
+    return render_template('paris.html')
+
+if __name__ == '__name__':
+    app.run(host='localhost', port=5000, debug=True)
