@@ -5,17 +5,20 @@
 {% block content %}
 
 <div class="quiz-container">
-    <form action="{{url_for('validation_quiz')}}" method="POST">
         {% for question in questions %}
         <div class="quiz-question" data-answer="{{question['reponse']}}">
             <p id="pquiz">{{question['question']}}</p>
-            <input id="input-quiz" name="reponse-{{question['id']|string}}" type="text" placeholder="Votre réponse">
+            <p>{{question['reponse']}}</p>
+            {% if reponses_utilisateur[question['id']] %}
+            <p>Correct</p>
+            {% else %}
+            <p>Faux</p>
+            {% endif %}
         </div>
         <br>
         {% endfor %}
-        <button type="submit">Valider</button>
-    </form>
 </div>
 
-<div id="animation" class="win-lose-animation"></div>
+<p>Vous avez eu {{points}} points</p>
+
 {% endblock %}

@@ -3,7 +3,7 @@ import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user, set_points
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -82,6 +82,26 @@ def classement():
 def quiz():
     questions = get_questions()
     return render_template('quiz.html', questions=questions)
+
+@app.post('/quiz/validation')
+@login_required
+def validation_quiz():
+    questions = get_questions()
+    points_totaux = 0
+    reponses_utilisateur = {}
+    for question in questions:
+        reponse_utilisateur = request.form.get('reponse-'+str(question['id']))
+        if not reponse_utilisateur:
+            pass
+        if question['reponse'].lower() == reponse_utilisateur.lower():
+            points_totaux += 10
+            reponses_utilisateur[question['id']] = True
+        else:
+            reponses_utilisateur[question['id']] = False
+    user_id = session['user_id']
+    set_points(user_id, points_totaux)
+    session['user_points'] = points_totaux
+    return render_template('reponses_quiz.html', points=points_totaux, questions=questions, reponses_utilisateur=reponses_utilisateur) #Vous avez eu x points
 
 
 @app.get("/paris")
