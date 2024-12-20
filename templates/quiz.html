@@ -5,37 +5,15 @@
 {% block content %}
 
 <div class="quiz-container">
-    <div class="quiz-question" data-answer="Roger Federer">
-        <p id="pquiz">Qui détient le record de titres à Wimbledon ?</p>
-        <input id="input-quiz" type="text" placeholder="Votre réponse">
-        <button onclick="checkAnswer(this, 'Roger Federer')">Valider</button>
+    {% for question in questions %}
+    <div class="quiz-question" data-answer="{{question['reponse']}}">
+        <p id="pquiz">{{question['question']}}</p>
+        <input id="input-quiz" name="reponse-{{question['id']}}" type="text" placeholder="Votre réponse">
+        <button onclick="checkAnswer(this, '{{question['reponse']}}')">Valider</button>
     </div>
     <br>
-    <div class="quiz-question" data-answer="Rafael Nadal">
-        <p id="pquiz">Qui détient le record de victoires à Roland-Garros ?</p>
-        <input id="input-quiz" type="text" placeholder="Votre réponse">
-        <button onclick="checkAnswer(this, 'Rafael Nadal')">Valider</button>
-    </div>
-    <br>
-    <div class="quiz-question" data-answer="Novak Djokovic">
-        <p id="pquiz">Qui détient le record de semaines passées en tant que numéro 1 mondial ?</p>
-        <input id="input-quiz" type="text" placeholder="Votre réponse">
-        <button onclick="checkAnswer(this, 'Novak Djokovic')">Valider</button>
-    </div>
-    <br>
-    <div class="quiz-question" data-answer="Serena Williams">
-        <p id="pquiz">Quelle joueuse a remporté le plus de titres en Grand Chelem dans l'ère Open ?</p>
-        <input id="input-quiz" type="text" placeholder="Votre réponse">
-        <button onclick="checkAnswer(this, 'Serena Williams')">Valider</button>
-    </div>
-    <br>
-    <div class="quiz-question" data-answer="Andy Murray">
-        <p id="pquiz">Quel joueur britannique a remporté Wimbledon en 2013 et 2016 ?</p>
-        <input id="input-quiz" type="text" placeholder="Votre réponse">
-        <button onclick="checkAnswer(this, 'Andy Murray')">Valider</button>
-    </div>
-    
-    <!-- Autres questions -->
+    {% endfor %}
+
 </div>
 
 <div id="animation" class="win-lose-animation"></div>

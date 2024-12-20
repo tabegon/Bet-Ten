@@ -3,7 +3,7 @@ import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_user
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -80,7 +80,8 @@ def classement():
 @app.get("/quiz")
 @login_required
 def quiz():
-    return render_template('quiz.html')
+    questions = get_questions()
+    return render_template('quiz.html', questions=questions)
 
 
 @app.get("/paris")

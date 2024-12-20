@@ -24,7 +24,7 @@ def create_database():
                fichier_html TEXT NOT NULL,
                points INTEGER
                )''')
-    db.commit()
+    
     joueurs = [
     (1, 'Jannik Sinner', 'static/joueurs/jannik_sinner.html', 11830),
     (2, 'Alexander Zverev', 'static/joueurs/alexander_zverev.html', 7915),
@@ -82,8 +82,24 @@ def create_database():
     (54, 'Mackenzie McDonald', 'static/joueurs/mackenzie_mcdonald.html', 920),
     (55, 'James Duckworth', 'static/joueurs/james_duckworth.html', 880),
 ]
-
     db.executemany('''INSERT OR REPLACE INTO joueurs (id, nom_complet, fichier_html, points) VALUES (?, ?, ?, ?)''', joueurs)
+
+
+    db.execute('''CREATE TABLE IF NOT EXISTS questions (
+               id INTEGER PRIMARY KEY,
+               question TEXT NOT NULL,
+               reponse TEXT NOT NULL
+               )''')
+    db.commit()
+    
+    questions = [
+    (1, "Qui détient le record de titres à Wimbledon ?", "Roger Federer"),
+    (2, "Qui détient le record de victoires à Roland-Garros ?", "Rafael Nadal"),
+    (3, "Qui détient le record de semaines passées en tant que numéro 1 mondial ?", "Novak Djokovic"),
+    (4, "Quelle joueuse a remporté le plus de titres en Grand Chelem dans l'ère Open ?", "Serena Williams"),
+    (5, "Quel joueur britannique a remporté Wimbledon en 2013 et 2016 ?", "Andy Murray")
+    ]
+    db.executemany('''INSERT OR REPLACE INTO questions (id, question, reponse) VALUES (?, ?, ?)''', questions)
     db.commit()
     db.close()
 
@@ -111,5 +127,11 @@ def get_joueurs():
 def get_joueur(joueur_id):
     db = get_db()
     result = db.execute('SELECT * FROM joueurs WHERE id = ?', (joueur_id,)).fetchone()
+    db.close()
+    return result
+
+def get_questions():
+    db = get_db()
+    result = db.execute('SELECT * FROM questions').fetchall()
     db.close()
     return result
