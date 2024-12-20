@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Paris{% endblock %}
+{% block id %}paris_ban{% endblock %}
+
+{% block content %}
+<div class="box">
+    <h2>Les tournois en cours</h2>
+    </div>
+    <div class="clique" onclick="location.href='{{url_for('grands_chelems')}}'">
+    <a href="{{url_for('grands_chelems')}}">les grands chelems</a>
+    </div>
+    
+    <div class="clique">
+    <a href="#">les ATP 1000</a>
+    </div>
+    
+    <div class="clique">
+    <a href="#">les ATP 500</a>
+    </div>  
+    
+    <div class="clique">
+    <a href="#">retour</a>
+    </div>
+{% endblock %}

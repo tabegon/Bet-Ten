@@ -88,6 +88,22 @@ def quiz():
 def paris():
     return render_template('paris.html')
 
+@app.get("/paris/vosParis")
+def vos_paris():
+    return render_template('vos_paris.html')
+
+@app.get("/paris/tournoisEnCours")
+@login_required
+def tournois_en_cours():
+    return render_template('tournois_en_cours.html')
+
+
+@app.get("/paris/tournoisEnCours/grandsChelems")
+@login_required
+def grands_chelems():
+    return render_template('grands_chelems.html')
+
+
 @app.get("/classement/joueur/<int:joueur_id>")
 def fiche_joueur(joueur_id):
     joueur = get_joueur(joueur_id)

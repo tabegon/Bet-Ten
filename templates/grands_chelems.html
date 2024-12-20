@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Paris{% endblock %}
+{% block id %}paris_ban{% endblock %}
+
+{% block content %}
+<div class="box">
+    <h2>Les grands chlemes</h2>
+    </div>
+    <div id="match" class="classement" onclick="location.href='{{url_for('index')}}'">
+        <div class="item">nom</div>
+        <div class="item">niveau</div>
+        <div class="item">joueur 1 - VS - joueur 2</div>
+        <div class="item">date et heure</div>
+    </div>
+{% endblock %}
