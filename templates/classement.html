@@ -12,7 +12,7 @@
      <div class="classement" onclick="location.href='{{url_for("fiche_joueur", joueur_id=joueur['id'])}}'">
         <div class="item">{{joueur['id']}}</div>
         <div class="item">{{joueur['nom_complet']}}</div>
-        <div class="item">12345</div>
+        <div class="item">{{joueur['points']}}</div>
     </div>
     {% endfor %}
  {% endblock %}

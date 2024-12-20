@@ -21,13 +21,14 @@ def create_database():
     db.execute('''CREATE TABLE IF NOT EXISTS joueurs (
                id INTEGER PRIMARY KEY,
                nom_complet TEXT NOT NULL,
-               fichier_html TEXT NOT NULL
+               fichier_html TEXT NOT NULL,
+               points INTEGER
                )''')
     db.commit()
     joueurs = [
-        (1, 'Alexander Zverev', 'static/joueurs/alexander_zverev.html'),
-        (2, 'Jannik Sinner', 'static/joueurs/jannik_sinner.html')]
-    db.executemany('''INSERT OR REPLACE INTO Joueurs (id, nom_complet, fichier_html) VALUES (?, ?, ?)''', joueurs)
+        (2, 'Alexander Zverev', 'static/joueurs/alexander_zverev.html', 10000),
+        (1, 'Jannik Sinner', 'static/joueurs/jannik_sinner.html', 12000)]
+    db.executemany('''INSERT OR REPLACE INTO joueurs (id, nom_complet, fichier_html, points) VALUES (?, ?, ?, ?)''', joueurs)
     db.commit()
     db.close()
 
