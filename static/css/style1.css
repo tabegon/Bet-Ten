@@ -14,9 +14,12 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background-color: var(--base-clr);
     display: grid;
     grid-template-columns: auto 1fr;
+    background: url(../images/fond2.jpeg) no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .haut{
     left : 0 ;
@@ -41,19 +44,19 @@ body{
 }
 
 #accueil{
-    background: linear-gradient(135deg, #A0522D, #cb7b45);
+    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
 }
 
 #classement{
-    background: linear-gradient(135deg, #A0522D, #cb7b45);
+    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
 }
 
 #quiz{
-    background: linear-gradient(135deg, #005188, #00a591);
+    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
 }
 
 #paris_ban{
-    background: linear-gradient(135deg, #3A9D23, #5EAE4C);
+    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
 }
 
 h1{
@@ -199,6 +202,7 @@ h3{
 .box{
     margin: 15px;
     background-color: var(--accent-clr);
+    opacity: 90%;
     border-radius: 15px;
     padding: 20px;
 }
@@ -227,6 +231,7 @@ a{
     text-decoration: none; /* Enlever le soulignement */
     margin: 15px;
     background-color: var(--accent-clr);
+    opacity: 90%;
     border-radius: 15px;
     padding: 20px;
 }
@@ -241,6 +246,7 @@ a{
     padding: 20px;
     color: black;
     font-weight: bold;
+    opacity: 80%;
     /*-------------------------------------------------------------*/
     height: 25px;
     display: flex;
@@ -254,10 +260,11 @@ a{
 .Paris{
     font-size: 25px;
     margin: 15px;
-    background: rgb(37, 37, 37);
+    background: none;
     border-radius: 15px;
     padding: 50px;
     color: black;
+    opacity: 95%;
     font-weight: bold;
     /*-------------------------------------------------------------*/
     display: flex;
@@ -402,7 +409,7 @@ a{
 .quiz-container{
     margin: 15px;
     border-radius: 10px;
-	background-color: var(--accent-clr);
+	background-color: none;
     padding: 30px;
     color: black;
 }
@@ -415,7 +422,7 @@ a{
     gap: 10px;
     border-radius: 10px;
     padding: 20px;
-    background: linear-gradient(135deg, #005188, #00a591);
+    background: linear-gradient(110deg, #005288, #e00d0d67, #cf7247);
 }
 
 #pquiz{
@@ -433,10 +440,10 @@ input{
 
 button{
     color: black;
-    border: 2px solid #1c869d;
+    border: none;
     padding: 8px 22px;
     border-radius: 6px;
-    background: #2da0ba;
+    background: linear-gradient(110deg, #cf7247, #f3f1f023, #005288);
     transition: all 0.2s;
 }
 
@@ -451,7 +458,7 @@ button:active{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(110deg, #0f056c89, #b324087b, #d92b0d82);
     color: white;
     padding: 30px;
     border-radius: 10px;
