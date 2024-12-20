@@ -63,6 +63,10 @@ def logout():
     session.clear()
     return redirect(url_for('login'))
 
+@app.get("/forgetPassword")
+def forget_password():
+    return render_template('passwordinexistant.html')
+
 @app.get("/information")
 def information():
     return render_template('information.html')
