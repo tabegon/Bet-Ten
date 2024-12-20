@@ -3,7 +3,7 @@ import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user, set_points
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user, get_user_by_id, set_points
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -99,8 +99,9 @@ def validation_quiz():
         else:
             reponses_utilisateur[question['id']] = False
     user_id = session['user_id']
-    set_points(user_id, points_totaux)
-    session['user_points'] = points_totaux
+    user = get_user_by_id(user_id)
+    set_points(user_id, user['points']+points_totaux)
+    session['user_points'] = user['points']+points_totaux
     return render_template('reponses_quiz.html', points=points_totaux, questions=questions, reponses_utilisateur=reponses_utilisateur) #Vous avez eu x points
 
 
