@@ -334,7 +334,9 @@ h3{
     font-size: 20px;
 }
 
-
+progress{
+    width: 625px;
+}
 
 #quiz-extrait{
     margin: 10px;
