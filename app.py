@@ -17,7 +17,8 @@ app.secret_key = 'super secret key'
 
 @app.route("/")
 def index():
-    return render_template("/accueil.html")
+    joueurs = get_joueurs()
+    return render_template("/accueil.html", joueurs=joueurs)
 
 
 
@@ -71,12 +72,6 @@ def forget_password():
 def information():
     return render_template('information.html')
 
-@app.get("/classement")
-def classement():
-    joueurs = get_joueurs()
-    return render_template('classement.html', joueurs=joueurs)
-
-
 @app.get("/quiz")
 @login_required
 def quiz():
@@ -129,6 +124,11 @@ def grands_chelems():
 @login_required
 def match():
     return render_template('paris_match.html')
+
+@app.get("/classement")
+def classement():
+    joueurs = get_joueurs()
+    return render_template('classement.html', joueurs=joueurs)
 
 @app.get("/classement/joueur/<int:joueur_id>")
 def fiche_joueur(joueur_id):

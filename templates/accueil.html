@@ -17,14 +17,12 @@
 
 <div class="link_in_box" onclick="location.href='{{url_for('classement')}}'">
     <h2>Classement :</h2>
+    {% for joueur in joueurs %}
+    {% if joueur['id'] <= 3 %}
     <div class="player">
-        <a href="{{url_for('classement')}}">1 - Jannik Sinner - 1033</a>
-    </div>                        
-    <div class="player">             
-        <a href="{{url_for('classement')}}">2 - Alexander Zverev - 7315</a>
+        <a href="{{url_for('classement')}}">{{joueur['id']}} - {{joueur['nom_complet']}} - {{joueur['points']}}</a>
     </div>
-    <div class="player">
-        <a href="{{url_for('classement')}}">3 - Carlos Alcaraz - 6810</a>
-    </div>
+    {% endif %}                   
+    {% endfor %}
 </div>
 {% endblock %}
