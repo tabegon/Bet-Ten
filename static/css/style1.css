@@ -3,8 +3,8 @@
     --box-clr : #2c2b2c;
     --orange-clr : #d35335;
     --orange-gradient-clr : linear-gradient(135deg, #A0522D, #cb7b45);*/
-    --base-clr : #181A1C;
-    --accent-clr : #212327;
+    --base-clr : #181a1ceb;
+    --accent-clr : #1b1616df;
 }
 
 *{
@@ -44,19 +44,23 @@ body{
 }
 
 #accueil{
-    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
+    background: linear-gradient(110deg, #cf724788, #e6503283, #00528883);
+    backdrop-filter: blur(50px);
 }
 
 #classement{
-    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
+    background: linear-gradient(110deg, #cf724788, #e6503283, #00528883);
+    backdrop-filter: blur(50px);
 }
 
 #quiz{
-    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
+    background: linear-gradient(110deg, #cf724788, #e6503283, #00528883);
+    backdrop-filter: blur(50px);
 }
 
 #paris_ban{
-    background: linear-gradient(110deg, #cf7247, #e65032, #005288);
+    background: linear-gradient(110deg, #cf724788, #e6503283, #00528883);
+    backdrop-filter: blur(50px);
 }
 
 h1{
@@ -86,14 +90,14 @@ h3{
     height: 100vh;
     width: 250px;
     padding: 5px 1em;
-    background-color: #1a1a1a;
+    background-color: none;
+    backdrop-filter: blur(2px);
     position: sticky;
     top: 0;
     align-self: start;
     transition: 300ms ease-in-out;
     overflow: hidden;
     text-wrap: nowrap;
-    border-right: 1px solid rgba(255, 255, 255, 0.411);
 }
 
 #nav.close{
@@ -120,7 +124,7 @@ h3{
 }
 
 #nav ul li a.active {
-    border: 1px solid rgba(102, 42, 126, 0.548);
+    border: 2px solid rgba(211, 116, 7, 0.812);
 }
 
 #nav a{
@@ -131,7 +135,8 @@ h3{
     display: flex;
     align-items: center;
     gap: 1.1em;
-	background-color: #1a1a1a;
+	background-color: none;
+    backdrop-filter: blur(10px);
 	margin: 0 10px;
     border-radius: 20px;
 	font-weight: 600;
@@ -148,7 +153,7 @@ h3{
 }
 
 #nav a:hover {
-    background: linear-gradient(135deg, #006e89, #A0522D);
+    backdrop-filter: blur(75px);
     transform: scale(1.1);
 }
 
@@ -160,13 +165,15 @@ h3{
     border-radius: .5em;
     background: none;
     cursor: pointer;
+    transition: all 1s;
     svg{
         transition: rotate 200ms ease;
     }
 }
 
 #toggle-btn:hover{
-    background: linear-gradient(135deg, #006e89, #A0522D);
+    backdrop-filter: blur(75px);
+    transform: scale(1.1);
 }
 
 .rotate svg:last-child{
@@ -209,7 +216,7 @@ h3{
 
 .player{
     margin: 15px;
-    background: linear-gradient(135deg, #A0522D, #cb7b45);
+    background: linear-gradient(110deg, #005288, #e00d0d67, #cf7247);
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -241,7 +248,7 @@ a{
     cursor: pointer;
     font-size: 25px;
     margin: 15px;
-    background: linear-gradient(135deg, #A0522D, #cb7b45);
+    background: linear-gradient(110deg, #cf7247, #e00d0d67, #005288);
     border-radius: 15px;
     padding: 20px;
     color: black;
@@ -279,8 +286,8 @@ a{
 .clique{
     display: flex;
     margin: 15px;
-    background: linear-gradient(135deg, #3A9D23, #5EAE4C);
-    border-radius: 25px;
+    background: linear-gradient(110deg, #cf724791, #e00d0d50, #00528896);
+    border-radius: 50px;
     padding: 20px;
 	height: 200px;
 	width: 90%;
@@ -298,16 +305,14 @@ a{
 
 #match{
     margin: 15px;
-    background: linear-gradient(135deg, #3A9D23, #5EAE4C);
+    background: linear-gradient(110deg, #cf724791, #e00d0d50, #00528896);
     padding: 20px;
     font-size: 30px;
     font-weight: bold;
 	text-align: center;
 }
 
-
-
-
+/*ChatGPT*/
 
 .container {
 	width: 90%;
@@ -315,8 +320,6 @@ a{
 	max-width: 1200px;
 }
 .player-card {
-    margin-left: 10px;
-    margin-right: 10px;
 	background-color: rgb(37, 37, 37);
 	border: 1px solid #ddd;
 	border-radius: 8px;
@@ -349,10 +352,7 @@ a{
 }
 
 .bet-container {
-    margin-left: 10px;
-    margin-right: 10px;
 	display: flex;
-    flex-direction: row;
 	align-items: center;
 	justify-content: center;
 	background: #fff;
@@ -406,82 +406,7 @@ a{
 	background-color: #e0e0e0;
 }
 
-input[type="number"] {
-    width: 100%;
-    padding: 15px;
-    margin-top: 5px;
-    border: 2px solid #d1d5db;
-    border-radius: 5px;
-    font-size: 20px;
-    outline: none;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-
-  /* Effet focus */
-input[type="number"]:focus {
-    border-color: #4f46e5; /* Couleur de focus */
-    box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
-  }
-
-input[type="radio"]{
-    display: none;
-}
-
-label{
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    color: #01cc65;
-    font-size: 25px;
-    font-weight: 500;
-    border: 2px solid #01cc65;
-    border-radius: 5px;
-    padding: 10px 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-label:before{
-    content: "";
-    height: 22px;
-    width: 22px;
-    border: 3px solid #01cc65;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-input[type="radio"]:checked + label{
-    background-color: #01cc65;
-    color: white;
-}
-
-input[type="radio"]:checked + label:before{
-    height: 11px;
-    width: 11px;
-    border: 8px solid white;
-    background-color: #01cc65;
-}
-
-#input_formulaire{
-    display: flex;
-    flex-direction: row;
-}
-
-#formulaire_pari{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#boutton_pari{
-    margin-top: 10px;
-    background-color: #01cc65;
-    height: 40px;
-    width: 200px;
-    font-size: 20px;
-}
+/*Retour*/
 
 .item{
     display: flex;
@@ -531,29 +456,6 @@ button{
 
 button:active{
     transform: scale(0.96);
-}
-
-.formulaire_quiz{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.reponse_bool_v{
-    font-size: 20px;
-    font-weight: 500;
-    color: #3A9D23;
-}
-
-.reponse_bool_f{
-    font-size: 20px;
-    font-weight: 500;
-    color: #8b0e0e;
-}
-
-.reponse{
-    font-size: 30px;
-    font-weight: 600;
 }
 
 /* Animations */
