@@ -78,22 +78,20 @@
     </div>
 
 <div class="bet-container">
-    <!-- Bouton pour parier sur le joueur 1 -->
-    <button id="betPlayer1" class="bet-box" onclick="placeBet('Player 1', 'betPlayer1', 'betPlayer2')">
-        Parier sur Joueur 1
-    </button>
+    <form id="formulaire_pari" action="{{url_for('validation_pari')}}" method="POST">
+        <div id="input_formulaire">
+            <input type="radio" name="betPlayer" id="betPlayer1" checked="checked" />
+            <label for="betPlayer1">Parier sur Joueur 1</label>
 
-    <!-- Sélecteur de quantité -->
-    <div class="quantity-selector">
-        <button class="quantity-btn" onclick="updateQuantity(-10)">-</button>
-        <div class="quantity-display" id="quantity">10</div>
-        <button class="quantity-btn" onclick="updateQuantity(10)">+</button>
-    </div>
+            <div class="quantity-selector">
+                <input name="quantity_to_bet" type="number" placeholder="Votre quantité à parier">
+            </div>
 
-    <!-- Bouton pour parier sur le joueur 2 -->
-    <button id="betPlayer2" class="bet-box" onclick="placeBet('Player 2', 'betPlayer2', 'betPlayer1')">
-        Parier sur Joueur 2
-    </button>
+            <input type="radio" name="betPlayer" id="betPlayer2" />
+            <label for="betPlayer2">Parier sur Joueur 2</label>
+        </div>
+        <button id="boutton_pari" type="submit">Valider</button>
+    </form>
 </div>
 
 {% endblock %}

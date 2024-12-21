@@ -125,6 +125,18 @@ def grands_chelems():
 def match():
     return render_template('paris_match.html')
 
+@app.post('/paris/tournoisEnCours/grandsChelems/match1/validation')
+@login_required
+def validation_pari():
+    soustraire_points = request.form.get('quantity_to_bet')
+    joueur = request.form.get('betPlayer')
+    user_id = session['user_id']
+    user = get_user_by_id(user_id)
+    set_points(user_id, user['points'] - int(soustraire_points))
+    session['user_points'] = user['points'] - int(soustraire_points)
+    return render_template('reponse_pari.html', points=soustraire_points, joueur=joueur)
+
+
 @app.get("/classement")
 def classement():
     joueurs = get_joueurs()
