@@ -8,11 +8,11 @@
         {% for question in questions %}
         <div class="quiz-question" data-answer="{{question['reponse']}}">
             <p id="pquiz">{{question['question']}}</p>
-            <p>{{question['reponse']}}</p>
+            <p class="reponse">{{question['reponse']}}</p>
             {% if reponses_utilisateur[question['id']] %}
-            <p>Correct</p>
+            <p class="reponse_bool_v">Correct ✔️</p>
             {% else %}
-            <p>Faux</p>
+            <p class="reponse_bool_f">Faux ✖️</p>
             {% endif %}
         </div>
         <br>

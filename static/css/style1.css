@@ -280,7 +280,7 @@ a{
     display: flex;
     margin: 15px;
     background: linear-gradient(135deg, #3A9D23, #5EAE4C);
-    border-radius: 50px;
+    border-radius: 25px;
     padding: 20px;
 	height: 200px;
 	width: 90%;
@@ -454,6 +454,23 @@ button{
 
 button:active{
     transform: scale(0.96);
+}
+
+.reponse_bool_v{
+    font-size: 20px;
+    font-weight: 500;
+    color: #3A9D23;
+}
+
+.reponse_bool_f{
+    font-size: 20px;
+    font-weight: 500;
+    color: #8b0e0e;
+}
+
+.reponse{
+    font-size: 30px;
+    font-weight: 600;
 }
 
 /* Animations */
