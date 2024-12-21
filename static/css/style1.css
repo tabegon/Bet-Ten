@@ -456,6 +456,12 @@ button:active{
     transform: scale(0.96);
 }
 
+.formulaire_quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .reponse_bool_v{
     font-size: 20px;
     font-weight: 500;
