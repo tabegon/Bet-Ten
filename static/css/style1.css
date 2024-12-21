@@ -204,8 +204,8 @@ h3{
 
 .bento{
     align-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
     width: 1175px;
     height: 600px;
     border-radius: 1em;
@@ -350,7 +350,7 @@ h3{
     justify-content: center;
 }
 
-liste{
+.liste{
     margin-left: 20px;
     margin-top: 10px;
     font-size: 18px;
