@@ -140,17 +140,26 @@ def match():
 @app.post('/paris/tournoisEnCours/grandsChelems/match1/validation')
 @login_required
 def validation_pari():
+    gagner_points = None
     soustraire_points = request.form.get('quantity_to_bet')
-    joueur = request.form.get('betPlayer')
+    chance_de_gagner = randint(1, 3)
+    if chance_de_gagner == 2:
+        gagner_points = int(soustraire_points)*2
     user_id = session['user_id']
     user = get_user_by_id(user_id)
     if session['user_points']>int(soustraire_points):
-        points_necessaire = True
-        set_points(user_id, user['points'] - int(soustraire_points))
-        session['user_points'] = user['points'] - int(soustraire_points)
+        if not gagner_points:
+            points_necessaire = True
+            set_points(user_id, user['points'] - int(soustraire_points))
+            session['user_points'] = user['points'] - int(soustraire_points)
+        else:
+            points_necessaire = True
+            set_points(user_id, user['points'] + gagner_points)
+            session['user_points'] = user['points'] + gagner_points
+            return render_template('reponse_pari.html', points=soustraire_points, points_necessaire=points_necessaire, issue=True)
     else:
         points_necessaire = False
-    return render_template('reponse_pari.html', points=soustraire_points, points_necessaire=points_necessaire)
+    return render_template('reponse_pari.html', points=soustraire_points, points_necessaire=points_necessaire, issue=False)
 
 
 

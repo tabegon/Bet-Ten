@@ -7,6 +7,11 @@
 <div class="box">
         {% if points_necessaire %}
                 <p>Vous avez parié {{points}}</p>
+                {% if issue %}
+                        <p>Et vous avez gagner 2x{{points}} points</p>
+                {% else %}
+                        <p>Mais vous avez perdu {{points}} points</p>
+                {% endif %}
         {% else %}
                 <p> Vous n'avez pas assez de points pour parier cette somme ({{points}})</p>
         {% endif %}
