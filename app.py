@@ -2,8 +2,8 @@ import hashlib
 import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
-
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_questions, get_user, get_user_by_id, set_points
+from random import randint
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_question, get_questions, get_user, get_user_by_id, set_points
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -18,7 +18,10 @@ app.secret_key = 'super secret key'
 @app.route("/")
 def index():
     joueurs = get_joueurs()
-    return render_template("/accueil.html", joueurs=joueurs)
+    questions = get_questions()
+    nombre = randint(1, 5)
+    question = get_question(nombre)
+    return render_template("/accueil.html", joueurs=joueurs, question=question['question'])
 
 
 

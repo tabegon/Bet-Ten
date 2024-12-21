@@ -4,7 +4,7 @@
     --orange-clr : #d35335;
     --orange-gradient-clr : linear-gradient(135deg, #A0522D, #cb7b45);*/
     --base-clr : #181a1ceb;
-    --accent-clr : #1b1616df;
+    --accent-clr : #1b1616e3;
 }
 
 *{
@@ -68,6 +68,7 @@ h1{
 }
 p{
     font-size: 15px;
+    margin-left: 10px;
 }
 
 h2{
@@ -240,26 +241,46 @@ h3{
     flex-direction: row;
     gap: 1em;
 }
+
 .col.col-2{
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
+
 .col-box{
-    background: rgba(255, 255, 255, 0.25);
+    background: var(--accent-clr);
     border: 2px solid #ffffff10;
     backdrop-filter: blur(50px);
+    opacity: 90%;
     flex: 1;
     border-radius: 1em;
+    transition: all 0.2s ease-in-out;
 }
+
+.col-box:hover{
+    transform: scale(1.05);
+}
+
 .boxe{
-    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent-clr);
     border: 2px solid #ffffff10;
     backdrop-filter: blur(50px);
+    opacity: 90%;
     flex: 1;
     border-radius: 1em;
+    transition: all 0.2s ease-in-out;
 }
+
+.boxe:hover{
+    transform: scale(1.05);
+}
+
 @media(max-width:1024px){
     .bento{
         flex-direction: column;
@@ -293,6 +314,46 @@ h3{
     .boxe{
         gap: 0.5em;
     }
+}
+
+.col-box h2{
+    text-align: center;
+}
+.col-box p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.boxe h2{
+    text-align: center;
+}
+.boxe p{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#repondre{
+    margin-top: 10px;
+}
+
+#repondre:hover{
+    text-decoration: underline;
+}
+
+.extrait{
+    display: flex;
+    margin: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+
+li{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .main{
@@ -381,7 +442,7 @@ a{
     display: flex;
     margin: 15px;
     background: linear-gradient(110deg, #cf724791, #e00d0d50, #00528896);
-    border-radius: 50px;
+    border-radius: 25px;
     padding: 20px;
 	height: 200px;
 	width: 90%;

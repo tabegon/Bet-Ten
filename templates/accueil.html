@@ -8,47 +8,65 @@
 
     <div class="row row-1">
         <div class="col">
-            <div class="col-box"></div>
-            <div class="col-box"></div>
+            <div class="col-box">
+                <br>
+                <h2>qu'est ce que BET-TEN ?</h2>
+                <br>
+                <p><strong>BET-TEN</strong> est un site regroupant differentes fonctionnalitées tels que le classement des joueurs ATP, un système de points et de paris propre à cette app.</p>
+            </div>
+            <div class="col-box">
+                <br>
+                <h2>Pourquoi BET-TEN ?</h2>
+                <br>
+                <p><strong>BET-TEN</strong> Est un projet crée par 2 personnes, Guillaume et Théo. Il est né d'un travail pris un peu trop au serieux. C'est ce serieux qui aujourd'hui a donner naissance a ce site.</p>
+            </div>
         </div>
         <div class="col col-2">
-            <div class="col-box"></div>
-            <div class="col-box"></div>
+            <div class="col-box" onclick="location.href='{{url_for('classement')}}'">
+                <br>
+                <h2>Classement :</h2>
+                {% for joueur in joueurs %}
+                {% if joueur['id'] <= 3 %}
+                <div class="player">
+                    <a href="{{url_for('classement')}}">{{joueur['id']}} - {{joueur['nom_complet']}} - {{joueur['points']}}</a>
+                </div>
+                {% endif %}                   
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="row row-2">
-        <div class="boxe"></div>
-        <div class="boxe"></div>
-        <div class="boxe"></div>
+        <div class="boxe">
+            <div class="quiz-question"><p>{{question}}</p></div>
+            <br>
+            <a id="repondre" href="{{url_for('quiz')}}">Répondre à cette question</a>
+        </div>
+        
+        <div class="boxe" onclick="location.href='{{url_for('tournois_en_cours')}}'">
+                <a class="extrait" href="{{url_for('tournois_en_cours')}}">Tournoi en cours</a>
+        </div>
+        <div class="boxe" onclick="location.href='{{url_for('vos_paris')}}'">
+            <a class="extrait" href="{{url_for('vos_paris')}}">Vos paris</a>
+        </div>
     </div>
     <div class="row row-3">
-        <div class="boxe"></div>
-        <div class="boxe"></div>
+        <div class="boxe">
+            <h2>L'histoire du tennis</h2>
+            <br>
+            <p><strong>Le tennis</strong> est un sport qui trouve ses origines dans l’Antiquité, mais son développement moderne remonte à des siècles plus récents.</p>
+        </div>
+        <div class="boxe" onclick="location.href='https://www.maths-info-lycee.fr/'">
+            <h2>À Venir:</h2>
+            <br>
+            <ul>
+                <li> une excellente note 😉</li>
+                <li> 2025</li>
+                <li> système de paris approfondie</li>
+                <li> plus de questions dans le quiz</li>
+                <li> Assez d'ambitions pour améliorer notre site web</li>
+            </ul>
+        </div>
     </div>
 
 </div>
 {% endblock %}
-
-<!--
-<div class='box'>
-    <h2>qu'est ce que BET-TEN ?</h2>
-    <br>
-    <strong>BET-TEN</strong> est un site regroupant differentes fonctionnalitées tels que le classement des joueurs ATP, des paris sur les matchs a venir ainsi qu'un système de points propre à cette application.
-</div>
-<div class='box'>
-    <h2>Pourquoi BET-TEN ?</h2>
-    <br>
-    <strong>BET-TEN</strong> Est un projet crée par 2 personnes, Guillaume et Théo. Il est né d'un travail pris un peu trop au serieux. C'est ce serieux qui aujourd'hui a donner naissance a ce site.
-</div>
-
-<div class="link_in_box" onclick="location.href='{{url_for('classement')}}'">
-    <h2>Classement :</h2>
-    {% for joueur in joueurs %}
-    {% if joueur['id'] <= 3 %}
-    <div class="player">
-        <a href="{{url_for('classement')}}">{{joueur['id']}} - {{joueur['nom_complet']}} - {{joueur['points']}}</a>
-    </div>
-    {% endif %}                   
-    {% endfor %}
-</div>
--->

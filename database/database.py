@@ -142,6 +142,12 @@ def get_questions():
     db.close()
     return result
 
+def get_question(question_id):
+    db = get_db()
+    result = db.execute('SELECT * FROM questions WHERE id = ?', (question_id,)).fetchone()
+    db.close()
+    return result
+
 def set_points(user_id, points):
     db = get_db()
     db.execute('''UPDATE users SET points = ? WHERE id = ?''', (points, user_id))
