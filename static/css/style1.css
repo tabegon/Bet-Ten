@@ -305,7 +305,9 @@ a{
 	text-align: center;
 }
 
-/*ChatGPT*/
+
+
+
 
 .container {
 	width: 90%;
@@ -313,6 +315,8 @@ a{
 	max-width: 1200px;
 }
 .player-card {
+    margin-left: 10px;
+    margin-right: 10px;
 	background-color: rgb(37, 37, 37);
 	border: 1px solid #ddd;
 	border-radius: 8px;
@@ -345,6 +349,8 @@ a{
 }
 
 .bet-container {
+    margin-left: 10px;
+    margin-right: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -399,7 +405,6 @@ a{
 	background-color: #e0e0e0;
 }
 
-/*Retour*/
 
 .item{
     display: flex;
