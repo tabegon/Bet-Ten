@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Paris{% endblock %}
+{% block id %}paris_ban{% endblock %}
+
+{% block content %}
+<div class="box">
+    <h2>ATP 500</h2>
+    </div>
+    <div id="match" class="classement" onclick="location.href='{{url_for('vos_paris')}}'">
+        <div class="item">Open Sud de France</div>
+        <div class="item">finale</div>
+        <div class="item">R.Nadal - VS - R.Federer</div>
+        <div class="item">10/01 - 14:45</div>
+    </div>
+{% endblock %}

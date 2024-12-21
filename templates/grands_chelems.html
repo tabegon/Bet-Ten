@@ -7,10 +7,16 @@
 <div class="box">
     <h2>Les grands chlemes</h2>
     </div>
-    <div id="match" class="classement" onclick="location.href='{{url_for('match')}}'">
-        <div class="item">nom</div>
-        <div class="item">niveau</div>
-        <div class="item">joueur 1 - VS - joueur 2</div>
-        <div class="item">date et heure</div>
+    <div id="match" class="classement" onclick="location.href='{{url_for('#')}}'">
+        <div class="item">Roland Garros</div>
+        <div class="item">finale</div>
+        <div class="item">R.Nadal - VS - R.Federer</div>
+        <div class="item">13/01 - 12:45</div>
+    </div>
+    <div id="match" class="classement" onclick="location.href='{{url_for('vos_paris')}}'">
+        <div class="item">Wimbeldon</div>
+        <div class="item">finale</div>
+        <div class="item">C.Alcarz - VS - R.Federer</div>
+        <div class="item">01/03 - 02:00</div>
     </div>
 {% endblock %}
