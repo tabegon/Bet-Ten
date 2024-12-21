@@ -5,7 +5,11 @@
 {% block content %}
 
 <div class="box">
-        <p>Vous avez parié {{points}} sur {{joueur}}</p>
+        {% if points_necessaire %}
+                <p>Vous avez parié {{points}}</p>
+        {% else %}
+                <p> Vous n'avez pas assez de points pour parier cette somme ({{points}})</p>
+        {% endif %}
 </div>
 
 {% endblock %}

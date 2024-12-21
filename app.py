@@ -117,6 +117,15 @@ def vos_paris():
 def tournois_en_cours():
     return render_template('tournois_en_cours.html')
 
+@app.get("/paris/tournoisEnCours/atp1000")
+@login_required
+def atp_1000():
+    return render_template('atp_1000.html')
+
+@app.get("/paris/tournoisEnCours/atp500")
+@login_required
+def atp_500():
+    return render_template('atp_500.html')
 
 @app.get("/paris/tournoisEnCours/grandsChelems")
 @login_required
@@ -135,9 +144,15 @@ def validation_pari():
     joueur = request.form.get('betPlayer')
     user_id = session['user_id']
     user = get_user_by_id(user_id)
-    set_points(user_id, user['points'] - int(soustraire_points))
-    session['user_points'] = user['points'] - int(soustraire_points)
-    return render_template('reponse_pari.html', points=soustraire_points, joueur=joueur)
+    if session['user_points']>int(soustraire_points):
+        points_necessaire = True
+        set_points(user_id, user['points'] - int(soustraire_points))
+        session['user_points'] = user['points'] - int(soustraire_points)
+    else:
+        points_necessaire = False
+    return render_template('reponse_pari.html', points=soustraire_points, points_necessaire=points_necessaire)
+
+
 
 
 @app.get("/classement")
