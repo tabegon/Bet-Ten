@@ -320,6 +320,7 @@ h3{
     text-align: center;
 }
 .col-box p{
+    margin: auto;
     text-align: center;
     font-size: 20px;
 }
@@ -333,8 +334,10 @@ h3{
     font-size: 20px;
 }
 
-#repondre{
-    margin-top: 10px;
+
+
+#quiz-extrait{
+    margin: 10px;
 }
 
 #repondre:hover{
