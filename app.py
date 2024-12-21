@@ -125,6 +125,10 @@ def tournois_en_cours():
 def grands_chelems():
     return render_template('grands_chelems.html')
 
+@app.get("/paris/tournoisEnCours/grandsChelems/match1")
+@login_required
+def match():
+    return render_template('paris_match.html')
 
 @app.get("/classement/joueur/<int:joueur_id>")
 def fiche_joueur(joueur_id):

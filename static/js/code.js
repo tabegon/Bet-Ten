@@ -32,3 +32,30 @@ function checkAnswer(button, correctAnswer) {
     }                                                               // et le paramètre correctAnswer qui correspond à la réponse
     questionDiv.style.display = "none"; // Supprime la question
 };
+
+let quantity = 10; // Valeur initiale
+
+// Met à jour la quantité en fonction de l'incrément (ou décrément)
+function updateQuantity(change) {
+    quantity += change;               // La quantité augmente avec le param change (10 par défaut)
+    if (quantity < 10) quantity = 10; // La quantité minimale est 10
+    document.getElementById('quantity').textContent = quantity; // Récupère l'élément quantity et modifie le texte par la nouvelle quantité
+}
+
+// Fonction pour placer un pari
+function placeBet(player, buttonId, otherbuttonId) {
+    const button = document.getElementById(buttonId);   // Récupère l'élément buttonId
+    const other_button = document.getElementById(otherbuttonId);
+
+    // Vérifie si un pari a déjà été effectué
+    if (button.classList.contains('paried')||other_button.classList.contains('paried')) {          // Si un paris est déjà effectué
+        alert(`Vous avez déjà parié ${quantite_pari} points sur ${player}.`);   // Envoie à l'utilisateur qu'il ne peut pas parier
+        return;
+    }
+
+    // Ajoute la classe pour changer la couleur et signale un pari
+    button.classList.add('paried');                     // Un pari est en train d'être effectué donc on ajoute la classe paried
+    quantite_pari = quantity                            // Place la quantité parié dans quantite_pari pour savoir combien a-t-on
+                                                            // parié même si on change la quantité après
+    alert(`Vous avez parié ${quantity} points sur ${player}.`); // Retourne la quantité qu'on a parié sur le joueur
+}
