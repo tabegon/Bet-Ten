@@ -28,7 +28,7 @@ def create_database():
     joueurs = [
     (1, 'Jannik Sinner', 'static/joueurs/jannik_sinner.html', 11830),
     (2, 'Alexander Zverev', 'static/joueurs/alexander_zverev.html', 7915),
-    (3, 'Carlos Alcaraz', 'static/joueurs/work_in_progress.html', 7010),
+    (3, 'Carlos Alcaraz', 'static/joueurs/carlos_alcaraz.html', 7010),
     (4, 'Taylor Fritz', 'static/joueurs/work_in_progress.html', 5100),
     (5, 'Daniil Medvedev', 'static/joueurs/work_in_progress.html', 5030),
     (6, 'Casper Ruud', 'static/joueurs/work_in_progress.html', 4255),

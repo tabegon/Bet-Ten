@@ -660,6 +660,39 @@ button:active{
     align-items: center;
 }
 
+
+.reponse_bool_v{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--accent-clr);
+    padding: 5px;
+    border-radius: 50px;
+    color: #3A9D23;
+}
+
+.reponse_bool_f{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--accent-clr);
+    padding: 5px;
+    border-radius: 50px;
+    color: #8b0e0e;
+}
+
+#paragraphe_quiz{
+    text-align: center;
+    background-color: var(--accent-clr);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.reponse{
+    font-size: 30px;
+    font-weight: 600;
+}
+
 /* Animations */
 .win-lose-animation {
     display: none;
