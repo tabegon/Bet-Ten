@@ -10,6 +10,17 @@
         <section>
             <div class="form-box">
                 <div class="form-value">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class=flashes>
+                            {% for message in messages %}
+                                {{ message }}
+                        </div>
+                        
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {% endwith %}
                     <form name="formulaire" id="loginForm" action="/login" method="POST">
                         <h2>Login</h2>
                         <div class="inputbox">

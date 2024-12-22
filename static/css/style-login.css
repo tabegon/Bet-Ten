@@ -42,7 +42,6 @@ h2{
     margin: 30px 0;
     width: 310px;
     border-bottom: 2px solid white;
-
 }
 
 .inputbox label{
@@ -102,6 +101,8 @@ input:valid~label{
 }
 
 .forget label a{
+    margin-left: -60%;
+    
     color: #fff;
     text-decoration: none;
 }
@@ -110,8 +111,17 @@ input:valid~label{
     text-decoration: underline;
 }
 
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .valider{
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     height: 40px;
     border-radius: 40px;
     background: #fff;
@@ -143,4 +153,12 @@ input:valid~label{
 
 .register p a:hover{
     text-decoration: underline;
+}
+
+.flashes{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
 }

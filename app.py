@@ -109,6 +109,7 @@ def paris():
     return render_template('paris.html')
 
 @app.get("/paris/vosParis")
+@login_required
 def vos_paris():
     return render_template('vos_paris.html')
 
@@ -173,14 +174,12 @@ def classement():
 def fiche_joueur(joueur_id):
     joueur = get_joueur(joueur_id)
     if not joueur:
-        print('no joueur')
         abort(404)
     chemin_fichier = os.path.join(app.root_path, joueur['fichier_html'])
     try:
         with open(chemin_fichier, 'r', encoding='utf-8') as f:
             contenu = f.read()
     except FileNotFoundError:
-        print('pas de fichier' )
         abort(404)
     return render_template('joueur.html', joueur=joueur, contenu=contenu)
 
