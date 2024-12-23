@@ -13,6 +13,7 @@
     color: white;
     font-family: 'Poppins', sans-serif;
 }
+
 body{
     display: grid;
     grid-template-columns: auto 1fr;
@@ -21,6 +22,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
 .haut{
     left : 0 ;
     right : 0;
