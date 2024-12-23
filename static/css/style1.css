@@ -17,9 +17,8 @@ body{
     display: grid;
     grid-template-columns: auto 1fr;
     background: url(../images/fond2.jpeg) no-repeat;
-    background-position: center;
-    background-attachment: fixed;
     background-size: cover;
+    background-position: center;
 }
 .haut{
     left : 0 ;
@@ -281,7 +280,7 @@ h3{
     transform: scale(1.05);
 }
 
-@media(max-width:1024px){
+@media(max-width:1500px){
     .bento{
         flex-direction: column;
     }
@@ -299,10 +298,9 @@ h3{
         flex-direction: column;
     }
 }
-@media(max-width:650px){
+@media(max-width:1050px){
     .bento{
-        max-width: 900px;
-        max-height: 550px;
+        max-width: 1400px;
         gap: 0.5em;
     }
     .row{
