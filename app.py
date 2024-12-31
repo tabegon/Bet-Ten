@@ -3,7 +3,7 @@ import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 from random import randint
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_question, get_questions, get_user, get_user_by_id, get_users, set_points
+from database.database import add_question, create_database, create_user, get_joueur, get_joueurs, get_question, get_questions, get_user, get_user_by_id, get_users, set_points
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -192,6 +192,17 @@ def classement_parieur():
 
 #----------------------------------------------------------------------------
 
+@app.get('/addQuestions')
+def add_questions():
+    return render_template('addquestions.html')
+
+@app.post('/addQuestions/validation')
+def validation_question():
+    question_utilisateur = request.form.get('new_question')
+    reponse_utilisateur = request.form.get('new_answer')
+    if question_utilisateur and reponse_utilisateur:
+        add_question(question_utilisateur, reponse_utilisateur)
+    return render_template('reponses_quiz.html')
 
 
 if __name__ == '__name__':

@@ -86,7 +86,7 @@ def create_database():
 
 
     db.execute('''CREATE TABLE IF NOT EXISTS questions (
-               id INTEGER PRIMARY KEY,
+               id INTEGER PRIMARY KEY AUTOINCREMENT,
                question TEXT NOT NULL,
                reponse TEXT NOT NULL
                )''')
@@ -153,6 +153,12 @@ def get_question(question_id):
     result = db.execute('SELECT * FROM questions WHERE id = ?', (question_id,)).fetchone()
     db.close()
     return result
+
+def add_question(question, reponse):
+    db = get_db()
+    db.execute(f'''INSERT INTO questions (question, reponse) VALUES (?, ?)''', (question, reponse))
+    db.commit()
+    db.close()
 
 def set_points(user_id, points):
     db = get_db()

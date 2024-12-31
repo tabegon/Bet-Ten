@@ -738,3 +738,28 @@ button:active{
     text-align: center;
     z-index: 1000;
 }
+
+#input-question{
+    width: 300px;
+    height: 150%;
+    background: rgba(255, 255, 255, 0.175);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    color: black;
+    font-weight: 600;
+    font-size: large;
+}
+#input-answer{
+    width: 300px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.175);
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    color: black;
+    font-weight: 600;
+    font-size: large;
+}
