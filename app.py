@@ -190,5 +190,9 @@ def classement_parieur():
     users_sorted = sorted(users, key=lambda x: x['points'], reverse=True)
     return render_template('classement_parieur.html', users=users_sorted)
 
+#----------------------------------------------------------------------------
+
+
+
 if __name__ == '__name__':
     app.run(host='localhost', port=5000, debug=True)

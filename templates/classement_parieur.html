@@ -7,10 +7,12 @@
 <div class="box">
     <h2>Classement des 100 premiers joueurs</h2>
     </div>
+    
     {% for user in users %}
-        <div class="classement">
-            <div class="item">{{user['prenom']}}</div>
-            <div class="item">{{user['points']}}</div>
-        </div>
+            <div class="classement">
+                <div class="item">{{ loop.index }}</div>
+                <div class="item">{{user['prenom']}}</div>
+                <div class="item">{{user['points']}}</div>
+            </div>
     {% endfor %}
  {% endblock %}
