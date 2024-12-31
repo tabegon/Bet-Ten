@@ -116,6 +116,12 @@ def get_user_by_id(user_id):
     db.close()
     return result
 
+def get_users():
+    db = get_db()
+    result = db.execute('SELECT * FROM users').fetchall()
+    db.close()
+    return result
+
 def create_user(prenom, nom, username, password):
     db = get_db()
     db.execute(f'''INSERT INTO users (prenom, nom, username, password, points)

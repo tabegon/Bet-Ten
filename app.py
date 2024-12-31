@@ -3,7 +3,7 @@ import os
 import sqlite3
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 from random import randint
-from database.database import create_database, create_user, get_joueur, get_joueurs, get_question, get_questions, get_user, get_user_by_id, set_points
+from database.database import create_database, create_user, get_joueur, get_joueurs, get_question, get_questions, get_user, get_user_by_id, get_users, set_points
 from decorator.auth import login_required
 from helpers import check_password, encode_password
 
@@ -182,6 +182,13 @@ def fiche_joueur(joueur_id):
     except FileNotFoundError:
         abort(404)
     return render_template('joueur.html', joueur=joueur, contenu=contenu)
+
+@app.get("/clssmntParieur")
+@login_required
+def classement_parieur():
+    users = get_users()
+    users_sorted = sorted(users, key=lambda x: x['points'], reverse=True)
+    return render_template('classement_parieur.html', users=users_sorted)
 
 if __name__ == '__name__':
     app.run(host='localhost', port=5000, debug=True)
