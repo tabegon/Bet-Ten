@@ -763,3 +763,37 @@ button:active{
     font-weight: 600;
     font-size: large;
 }
+.quiz-question input {
+    width: 100%;
+    min-width: 200px; /* Largeur minimale */
+    max-width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    overflow: hidden;
+    resize: none; /* Empêche le redimensionnement manuel */
+}
+
+/* Ajustement dynamique de la largeur */
+.quiz-question input[type="text"] {
+    display: inline-block;
+    width: auto;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Animation douce lors du changement de taille */
+.quiz-question input[type="text"]:focus {
+    border-color: #4CAF50;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Permet l'ajustement automatique avec JavaScript */
+.quiz-question input[type="text"] {
+    white-space: nowrap;
+    overflow: hidden;
+}

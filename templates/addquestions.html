@@ -16,4 +16,13 @@
         </div>
     </form>
 </div>
+<script>
+    document.querySelectorAll('.quiz-question input[type="text"]').forEach(input => {
+        input.addEventListener('input', function () {
+            this.style.width = 'auto';
+            this.style.width = (this.scrollWidth + 2) + 'px';
+        });
+    });
+</script>
+
  {% endblock %}
